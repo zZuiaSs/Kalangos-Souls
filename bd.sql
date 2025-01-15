@@ -7,4 +7,3 @@ create table usuario(
     email varchar(90),
     telefone varchar(14)
 );
-
