@@ -9,11 +9,12 @@
 <body>
 
     <div class="fundo">
-        <div class="">
+        <div class="bloco">
             <h1>Login</h1>
+
             <form method="post">
-                <input type="text" name = "inp1" placeholder ="Nome">
-                <input type="text" name = "inp2" placeholder ="Senha"> 
+                <input type="text" name="inp1" placeholder="Nome">
+                <input type="text" name="inp2" placeholder="Senha"> 
                 <div class="bt">
                     <input type="submit">
                 </div>
