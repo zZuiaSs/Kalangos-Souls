@@ -1,5 +1,5 @@
 create database Reservas;
-use Reservas;
+use Reservas; 
 
 create table usuario(
 	id_usuario int auto_increment primary key,
@@ -7,3 +7,4 @@ create table usuario(
     email varchar(90),
     telefone varchar(14)
 );
+
