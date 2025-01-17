@@ -3,7 +3,7 @@ USE reservas;
 
 CREATE TABLE usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(80) NOT NULL,
+    nome VARCHAR(80) NOT NULL UNIQUE,
     email VARCHAR(90) NOT NULL,
     telefone VARCHAR(14) NOT NULL
 );
@@ -23,3 +23,4 @@ CREATE TABLE reservas (
     FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
     FOREIGN KEY (id_espaco) REFERENCES espaço (id_espaco)
 );
+
