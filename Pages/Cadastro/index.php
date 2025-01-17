@@ -11,49 +11,24 @@
             <form method = "post">
                 <input type="text" name = "inp1" placeholder = "Nome">
                 <input type="text" name = "inp2" placeholder = "E-mail"> 
+                <input type="text" name = "inp3" placeholder = "Telefone">
+                <input type="text" name = "inp4" placeholder = "Senha"> 
+                <input type="text" name = "inp5" placeholder = "Confirma Senha"> 
                 <div class = "bt">
                     <input type="submit">
                 </div>
             </form>
         </div>
 
-        
-        <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                flex-direction: column;
-            }
-
-            .fundo {
-                display: flex;
-                background-color: black;
-                height: 350px;
-                width: 250px;
-            }
-
-            h1 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-            }
-
-            input {
-                display: flex;
-                padding: 2px;
-                margin-bottom: 5px;
-            }
-
-            .bt {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-        </style>
-
 </body>
 </html>
+
+                    <!-- Cadastro -->
+<!-- Email, Nome de usuário, Senha (confirmar senh), Telefone -->
+
+
+<?php
+
+    
+
+?>
