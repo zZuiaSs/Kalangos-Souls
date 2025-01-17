@@ -25,5 +25,8 @@
 </body>
 </html>
 
+                    <!-- Cadastro -->
 <!-- Email, Nome de usuário, Senha (confirmar senh), Telefone -->
+
+    <!-- Login -->
 <!-- Nome de usuário, Senha -->
