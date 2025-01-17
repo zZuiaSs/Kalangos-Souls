@@ -25,5 +25,5 @@
 </body>
 </html>
 
-<!-- Email, Nome de usuário, Senha (confirmar senh), Telefone -->
+<!-- Email, Nome de usuário, Senha (confirmar senha), Telefone -->
 <!-- Nome de usuário, Senha -->
