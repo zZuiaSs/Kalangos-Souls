@@ -10,7 +10,7 @@
         public function connect() {
             try {
                 
-                $conn = new PDO(
+                $conn = new PDO (
                     "mysql:host=".$this->server.";dbname=".$this->dbnome, 
                     $this->user, 
                     $this->pass  
