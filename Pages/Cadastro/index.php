@@ -13,25 +13,18 @@
                 <input type="text" name = "inp2" placeholder = "E-mail"> 
                 <input type="text" name = "inp3" placeholder = "Telefone">
                 <input type="text" name = "inp4" placeholder = "Senha"> 
-<<<<<<< Updated upstream
                 <input type="text" name = "inp5" placeholder = "Confirmar Senha"> 
-=======
                 <input type="text" name = "inp5" placeholder = "Confirma Senha"> 
->>>>>>> Stashed changes
                 <div class = "bt">
                     <input type="submit">
                 </div>
             </form>
         </div>
-<<<<<<< Updated upstream
-=======
 
 </body>
 </html>
 
-<?php
->>>>>>> Stashed changes
-
+n 
     <style>
         * {
             margin: 0;
@@ -46,7 +39,6 @@
             flex-direction: column;   
         }
 
-<<<<<<< Updated upstream
         .fundo {
             display: flex;
             background-color: black;
@@ -80,9 +72,9 @@
 
 </body>
 </html>
-=======
-?>
->>>>>>> Stashed changes
+
+
+
 
                     <!-- Cadastro -->
 <!-- Email, Nome de usuário, Senha (confirmar senh), Telefone -->
