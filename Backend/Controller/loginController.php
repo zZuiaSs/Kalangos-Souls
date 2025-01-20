@@ -3,13 +3,11 @@
     include_once __DIR__ . "/../db/database.php";
  
     // Classe LoginController é responsável pela autenticação de usuários
-    class LoginController
-    {
+    class LoginController {
         private $conn; // Variável q armazena a conexão do código com o banco de dados
     
         // Construtor da classe --> inicializa a conexão com o banco de dados
-        public function __construct()
-        {
+        public function __construct() {
             // Cria uma instância da classe Database para obter a conexão --> objeto criado a partir da classe
             $database = new Database();                                          
             // Armazena a conexão na variável conn      ||      OU SEJA, TUDO ISSO TÁ DENTRO DA VÁRIAVEL conn 
@@ -17,8 +15,8 @@
         }
     
         // Função do login
-        public function login($usuario, $senha)
-        {
+        public function login($usuario, $senha) {
+
             try {
                 // Prepara a consulta SQL para verificar se o username e a senha correspondem a um usuário
                 $sql = "SELECT * FROM usuarios WHERE usuario = :usuario AND senha = :senha";
@@ -52,11 +50,12 @@
                 // Retorna a mensagem de erro para debug
                 echo "Erro ao realizar login " . $e->getMessage();
             }
+
         }
     
         // Função para encerrar a sessão
-        public function logout()
-        {
+
+        public function logout() {
             session_start();
             session_destroy();
         }
