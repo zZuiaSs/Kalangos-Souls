@@ -4,7 +4,7 @@
  
     // Classe LoginController é responsável pela autenticação de usuários
     class LoginController {
-        private $conn; // Variável q armazena a conexão do código com o banco de dados
+        private $conn; // Variável que armazena a conexão do código com o banco de dados
     
         // Construtor da classe --> inicializa a conexão com o banco de dados
         public function __construct() {
@@ -38,7 +38,6 @@
                     session_start();
                     $_SESSION["id_usuario"] = $usuario["id"];
                     $_SESSION["nome"] = $usuario["nome"];
-                    $_SESSION["email"] = $usuario["email"];
                     $_SESSION["senha"] = $usuario["senha"];
     
                     // Retorna verdadeiro para indicar sucesso
