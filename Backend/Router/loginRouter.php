@@ -14,9 +14,9 @@
                 $telefone = $_POST["telefone"];
                 $email = $_POST["email"];
 
-                if (!(empty($nome) || empty($senha) || empty($telefone) || empty($email))) {
-                    
-                    $resposta = $loginController->Login($nome, $senha, $telefone, $email);
+                if (!(empty($nome) || empty($senha))) {
+
+                    $resposta = $loginController->Login($nome, $senha);
 
                     if ($resposta) {
                         header("Location: ../../Pages/Login/index.php");
