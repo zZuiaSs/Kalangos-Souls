@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="Pt - Br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 </head>
+
 <body>
-        <div class="fundo">
-                        <h1>Cadastro</h1>
-            <form method = "post">
-                <input type="text" name = "inp1" placeholder = "Nome">
-                <input type="text" name = "inp2" placeholder = "E-mail"> 
-                <input type="text" name = "inp3" placeholder = "Telefone">
-                <input type="text" name = "inp4" placeholder = "Senha"> 
-                <input type="text" name = "inp5" placeholder = "Confirmar Senha"> 
-                <input type="text" name = "inp5" placeholder = "Confirma Senha"> 
-                <div class = "bt">
-                    <input type="submit">
-                </div>
-            </form>
-        </div>
+
+    <div class="fundo">
+        <h1>Cadastro</h1>
+
+        <form method="post">
+            <input type="text" name="inp1" placeholder="Nome">
+            <input type="text" name="inp2" placeholder="Email"> 
+            <input type="text" name="inp3" placeholder="Telefone">
+            <input type="text" name="inp4" placeholder="Senha"> 
+            <input type="text" name="inp5" placeholder="Confirmar Senha"> 
+
+            <div class="bt">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>
 
-n 
+<!-- S T Y L E -->
+
     <style>
-   style>
         * {
             margin: 0;
             padding: 0;
@@ -78,14 +81,16 @@ n
             background-color: #45a049;
         }
 
-    </style>
+    input {
+        display: flex;
+        padding: 2px;
+        margin-bottom: 9px;
+    }
 
+    .bt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-</body>
-</html>
-
-
-
-
-                    <!-- Cadastro -->
-<!-- Email, Nome de usuário, Senha (confirmar senh), Telefone -->
+</style>
