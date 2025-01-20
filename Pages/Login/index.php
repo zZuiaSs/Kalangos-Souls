@@ -19,6 +19,7 @@
         </div>
 
     <style>
+       style>
         * {
             margin: 0;
             padding: 0;
@@ -35,32 +36,39 @@
         .fundo {
             display: flex;
             background-color: black;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            height: 300px;
-            width: 220px;
+            align-items: center;    
+            flex-direction: column;
+            height: 350px;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         h1 {
             display: flex;
             color: white;
             margin-bottom: 15px;
-            justify-content: baseline;
-            align-items: center;
-            flex-direction: column;
         }
 
         input {
             display: flex;
-            padding: 2px;
-            margin-bottom: 13px;
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
         }
 
-        .bt {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .bt input {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bt input:hover {
+            background-color: #45a049;
         }
 
     </style>
@@ -68,12 +76,11 @@
 
 </body>
 </html>
-<<<<<<< Updated upstream
-=======
+
 
                     <!-- Cadastro -->
 <!-- Email, Nome de usuário, Senha (confirmar senh), Telefone -->
                     
      <!-- Login -->
 <!-- Nome de usuário, Senha -->
->>>>>>> Stashed changes
+

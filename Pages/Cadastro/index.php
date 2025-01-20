@@ -26,6 +26,7 @@
 
 n 
     <style>
+   style>
         * {
             margin: 0;
             padding: 0;
@@ -45,26 +46,36 @@ n
             justify-content: center;
             align-items: center;    
             flex-direction: column;
-            height: 300px;
-            width: 220px;
+            height: 350px;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         h1 {
             display: flex;
             color: white;
-            margin-bottom: 9px;
+            margin-bottom: 15px;
         }
 
         input {
             display: flex;
-            padding: 2px;
-            margin-bottom: 9px;
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
         }
 
-        .bt {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .bt input {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bt input:hover {
+            background-color: #45a049;
         }
 
     </style>
