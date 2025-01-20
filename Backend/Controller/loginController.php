@@ -39,6 +39,7 @@
                     $_SESSION["id_usuario"] = $usuario["id"];
                     $_SESSION["nome"] = $usuario["nome"];
                     $_SESSION["email"] = $usuario["email"];
+                    $_SESSION["senha"] = $usuario["senha"];
     
                     // Retorna verdadeiro para indicar sucesso
                     return true;
