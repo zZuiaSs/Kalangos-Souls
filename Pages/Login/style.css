@@ -4,6 +4,7 @@
 }
 
 body {
+    background-color: #1d1d1d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +14,7 @@ body {
 
 .fundo {
     display: flex;
-    background-color: black;
+    background-color: rgb(43, 43, 43);
     justify-content: center;
     align-items: center;    
     flex-direction: column;
@@ -38,13 +39,12 @@ input {
     border-radius: 5px;
 }
 
-.bt input {
-    background-color: #45a049;
-    color: white;
-    border: none;
-    cursor: pointer;
+#kayke {
+    width: 100%;
 }
 
-.bt input:hover {
-    background-color: #45a049;
+
+.form {
+    width: auto;
+    height: auto;
 }
