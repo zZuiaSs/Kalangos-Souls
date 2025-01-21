@@ -13,18 +13,34 @@
     <div class="fundo">
         <h1><?php echo isset($_GET['id']) ? 'Editar Usuário' : 'Cadastrar Usuário'; ?></h1>
 
-        <?php if (isset($error_message)) { ?>
-            <div class="error-message"><?php echo $error_message; ?></div>
+        <?php if (!empty($error_message)) { ?>
+            <div class="alert alert-danger" role="alert"><?php echo htmlspecialchars($error_message); ?></div>
         <?php } ?>
 
-        <form action="<?php echo "../../backend/router/userRouter.php?acao=$acao" ?>" method="POST">
-            <input type="hidden" name="idUsuario" value="<?php echo $usuario["id"]; ?>">        
-            <input type="text" name="inp1" placeholder="Nome" value="<?php echo $usuario['Nome']; ?>" required>
-            <input type="text" name="inp2" placeholder="Email" value="<?php echo $usuario['Email']?>" required> 
-            <input type="text" name="inp3" placeholder="Telefone" value="<?php echo $usuario['Telefone']?>" required>
-            <input type="text" name="inp4" placeholder="Senha" value="<?php echo $usuario['Senha']; ?>" required> 
-            <input type="text" name="inp5" placeholder="Confirmar Senha" value="<?php echo $usuario['Confirmar Senha']?>">
-            <button type="button" id="kayke" class="btn btn-outline-success"><?php echo $buttonTitle; ?></button>
+        <form action="<?php echo "../../backend/router/userRouter.php?acao=" . htmlspecialchars($acao); ?>" method="POST">
+            <input type="hidden" name="idUsuario" value="<?php echo htmlspecialchars($usuario['id'] ?? ''); ?>">
+
+            <div class="mb-3">
+                <input type="text" class="form-control" name="inp1" placeholder="Nome" value="<?php echo htmlspecialchars($usuario['Nome'] ?? ''); ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" class="form-control" name="inp2" placeholder="Email" value="<?php echo htmlspecialchars($usuario['Email'] ?? ''); ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="tel" class="form-control" name="inp3" placeholder="Telefone" value="<?php echo htmlspecialchars($usuario['Telefone'] ?? ''); ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control" name="inp4" placeholder="Senha" value="<?php echo htmlspecialchars($usuario['Senha'] ?? ''); ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control" name="inp5" placeholder="Confirmar Senha" value="<?php echo htmlspecialchars($usuario['Confirmar Senha'] ?? ''); ?>">
+            </div>
+
+            <button type="submit" class="btn btn-outline-success"><?php echo htmlspecialchars($buttonTitle); ?></button>
         </form>
     </div>
 
@@ -38,13 +54,14 @@
     session_start();
 
     if (!isset($_SESSION["id_usuario"])) {
-        header('Location: ../../Pages/Home/index.php');
+        header('Location: ../../Pages/Cadastro/index.php');
         exit();
     }
 
     require_once __DIR__ . '/../../backend/controller/userController.php';
     $userController = new UserController();
 
+    // Inicializar variáveis com valores padrão
     $usuario = [
         'id' => '',
         'Nome' => '',
@@ -57,13 +74,18 @@
     $acao = "cadastrar";
     $buttonTitle = "Cadastrar";
 
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
+    // Verificar se é edição
+    
+    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+        $id = (int)$_GET['id'];
         $buttonTitle = "Atualizar";
         $acao = "update";
+
+        // Buscar usuário pelo ID
         $usuario = $userController->getUserById($id);
+
         if (!$usuario) {
-            echo "Usuário não encontrado.";
+            $error_message = "Usuário não encontrado.";
         }
     }
 
