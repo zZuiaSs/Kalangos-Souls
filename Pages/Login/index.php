@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
 
@@ -11,7 +12,7 @@
     <div class="fundo">
         <h1>Login</h1>
 
-        <form method="POST">
+        <form method="POST" action="">
             <input type="text" name="inp1" placeholder="Nome">
             <input type="text" name="inp2" placeholder="Senha"> 
 
@@ -24,59 +25,4 @@
 </body>
 </html>
 
-<!-- S T Y L E -->
 
-<style>
-
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        flex-direction: column;   
-    }
-
-    .fundo {
-        display: flex;
-        background-color: black;
-        justify-content: center;
-        align-items: center;    
-        flex-direction: column;
-        height: 350px;
-        width: 250px;
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    h1 {
-        display: flex;
-        color: white;
-        margin-bottom: 15px;
-    }
-
-    input {
-        display: flex;
-        padding: 8px;
-        width: 100%;
-        margin-bottom: 10px;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .bt input {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-
-    .bt input:hover {
-        background-color: #45a049;
-    }
-
-</style>
