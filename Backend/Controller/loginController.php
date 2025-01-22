@@ -1,6 +1,6 @@
 <?php
 
-    include_once __DIR__ . "/../db/database.php";
+    include_once __DIR__ . "../../db/database.php";
  
     // Classe LoginController é responsável pela autenticação de usuários
     class LoginController {
@@ -19,7 +19,7 @@
 
             try {
                 // Prepara a consulta SQL para verificar se o username e a senha correspondem a um usuário
-                $sql = "SELECT * FROM usuarios WHERE usuario = :usuario AND senha = :senha";
+                $sql = "SELECT * FROM usuario WHERE usuario = :usuario AND senha = :senha";
                 $stmt = $this->conn->prepare($sql);
     
                 // Vincula os parâmetros recebidos aos placeholders (inputs) na consulta

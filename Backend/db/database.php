@@ -2,9 +2,9 @@
 
     class Database {
         private $server = "localhost"; 
-        private $dbnome = "kalangos souls";   
+        private $dbnome = "reservas";   
         private $user = "root";        
-        private $pass = "";           
+        private $pass = "";
 
         
         public function connect() {

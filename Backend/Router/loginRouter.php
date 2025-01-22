@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ . "/../controller/loginController.php";
+    require_once __DIR__ . "../../Controller/loginController.php";
 
     $loginController = new LoginController();
 
@@ -11,15 +11,13 @@
             case 'validarLogin':
                 $nome = $_POST["nome"];
                 $senha = $_POST["senha"];
-                $telefone = $_POST["telefone"];
-                $email = $_POST["email"];
 
                 if (!(empty($nome) || empty($senha))) {
 
                     $resposta = $loginController->Login($nome, $senha);
 
                     if ($resposta) {
-                        header("Location: ../../Pages/Login/index.php");
+                        header("Location: ../../Pages/Home/index.php");
                     } else {
                         echo "Usuário não encontrado...";
                     }

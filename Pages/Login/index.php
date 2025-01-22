@@ -13,10 +13,11 @@
     <div class="fundo">
         <h1>Login</h1>
 
-        <form class="form" method="POST" action="">
-            <input type="text" name="inp1" placeholder="Nome">
-            <input type="text" name="inp2" placeholder="Senha"> 
-            <button type="button" id="kayke" class="btn btn-outline-success">Enviar</button>
+        <form method="POST" action="../../Backend/Router//loginRouter.php?acao=validarLogin">
+            <input type="text" name="nome" placeholder="Nome">
+            <input type="text" name="senha" placeholder="Senha">
+            
+            <button type="submit" id="kayke" class="btn btn-outline-success">Enviar</button>
         </form>
     </div>
 

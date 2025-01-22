@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__ . "/../db/database.php";
  
-class UserController
+class userController
 {
     private $conn;
  
