@@ -3,7 +3,7 @@
     include_once __DIR__ . "../../db/database.php";
  
     // Classe LoginController é responsável pela autenticação de usuários
-    class LoginController {
+    class loginController {
         private $conn; // Variável que armazena a conexão do código com o banco de dados
     
         // Construtor da classe --> inicializa a conexão com o banco de dados
@@ -38,7 +38,7 @@
                     session_start();
                     $_SESSION["id_usuario"] = $usuario["id"];
                     $_SESSION["nome"] = $nome["nome"];
-                    $_SESSION["senha"] = $usuario["senha"];
+                    $_SESSION["senha"] = $senha["senha"];
     
                     // Retorna verdadeiro para indicar sucesso
                     return true;
