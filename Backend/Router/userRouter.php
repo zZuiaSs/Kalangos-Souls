@@ -6,12 +6,13 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         switch ($_GET["acao"]) {
+
             case 'cadastrar':
                 $nome = $_POST["nome"];
                 $senha = $_POST["senha"];
 
                 if (!(empty($nome) || empty($senha) || empty($email) || empty($telefone))) {
-                    $resposta = $userController->CreateUser($nome,$senha);
+                    $resposta = $userController->CreateUser($nome, $senha, $email, $telefone);
 
                     if ($resposta) {
                         header("Location: ../../pages/home/index.php");
@@ -22,9 +23,13 @@
             case "update":
                 $nome = $_POST["nome"];
                 $senha = $_POST["senha"];
-                if(!(empty($nome) || empty($senha))){
-                    $resposta = $userController->UpdateUser($_POST["idUsuario"],$nome,$senha);
-                    if($resposta){
+                $email = $_POST["email"];
+                $telefone = $_POST["telefone"];
+
+                if (!(empty($nome) || empty($senha))) {
+                    $resposta = $userController->UpdateUser($_POST["idUsuario"], $nome, $senha, $email, $telefone);
+                    
+                    if ($resposta) {
                         header("Location: ../../pages/home/index.php");
                     }
                 }
@@ -32,7 +37,8 @@
 
             case "deletar":
                 $resultado = $userController->DeleteUser($_POST["idUsuario"]);
-                if($resultado){
+
+                if ($resultado) {
                     header("Location: ../../pages/home/index.php");
                 }
             

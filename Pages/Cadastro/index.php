@@ -11,7 +11,7 @@
 <body>
 
     <div class="fundo">
-        <h1><?php echo isset($_GET['id']) ? 'Editar Usuário' : 'Cadastrar Usuário'; ?></h1>
+        <h1><?php echo isset($_GET['id']) ? 'Editar Usuário' : 'Cadastrar'; ?></h1>
 
         <?php if (!empty($error_message)) { ?>
             <div class="alert alert-danger" role="alert"><?php echo htmlspecialchars($error_message); ?></div>
@@ -40,7 +40,7 @@
                 <input type="password" class="form-control" name="inp5" placeholder="Confirmar Senha" value="<?php echo htmlspecialchars($usuario['Confirmar Senha'] ?? ''); ?>">
             </div>
 
-            <button type="submit" class="btn btn-outline-success"><?php echo htmlspecialchars($buttonTitle); ?></button>
+            <button type="submit" id="kayke" class="btn btn-outline-success">Enviar</button>
         </form>
     </div>
 
@@ -53,10 +53,10 @@
 
     session_start();
 
-    if (!isset($_SESSION["id_usuario"])) {
-        header('Location: ../../Pages/Cadastro/index.php');
-        exit();
-    }
+    // if (!isset($_SESSION["id_usuario"])) {
+    //     header('Location: ../../Pages/Cadastro/index.php');
+    //     exit();
+    // }
 
     require_once __DIR__ . '/../../backend/controller/userController.php';
     $userController = new UserController();
@@ -78,7 +78,7 @@
     
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = (int)$_GET['id'];
-        $buttonTitle = "Atualizar";
+        // $buttonTitle = "Atualizar";
         $acao = "update";
 
         // Buscar usuário pelo ID
