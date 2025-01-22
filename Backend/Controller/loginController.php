@@ -15,15 +15,15 @@
         }
     
         // Função do login
-        public function login($usuario, $senha) {
+        public function login($nome, $senha) {
 
             try {
                 // Prepara a consulta SQL para verificar se o username e a senha correspondem a um usuário
-                $sql = "SELECT * FROM usuario WHERE usuario = :usuario AND senha = :senha";
+                $sql = "SELECT * FROM usuario WHERE nome = :usuario AND senha = :senha";
                 $stmt = $this->conn->prepare($sql);
     
                 // Vincula os parâmetros recebidos aos placeholders (inputs) na consulta
-                $stmt->bindParam(":usuario", $usuario);
+                $stmt->bindParam(":nome", $nome);
                 $stmt->bindParam(":senha", $senha);
     
                 // Executa a consulta no banco de dados
@@ -37,7 +37,7 @@
                     // Inicia uma sessão para armazenar os dados do usuário logado
                     session_start();
                     $_SESSION["id_usuario"] = $usuario["id"];
-                    $_SESSION["nome"] = $usuario["nome"];
+                    $_SESSION["nome"] = $nome["nome"];
                     $_SESSION["senha"] = $usuario["senha"];
     
                     // Retorna verdadeiro para indicar sucesso
