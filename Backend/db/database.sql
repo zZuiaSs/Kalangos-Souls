@@ -20,7 +20,5 @@ CREATE TABLE espaco (
 CREATE TABLE reservas (
     id_usuario INT,
     id_espaco INT,
-    horario DATE NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
-    FOREIGN KEY (id_espaco) REFERENCES espaço (id_espaco)
+    horario DATE NOT NULL
 );

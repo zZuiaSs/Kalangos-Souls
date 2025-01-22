@@ -2,7 +2,7 @@
 
     class Database {
         private $server = "localhost"; 
-        private $dbnome = "Kalangos_Souls";   
+        private $dbnome = "Kalangos Souls";   
         private $user = "root";        
         private $pass = "";           
 
