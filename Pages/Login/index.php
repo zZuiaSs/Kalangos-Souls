@@ -13,7 +13,7 @@
     <div class="fundo">
         <h1>Login</h1>
 
-        <form method="POST" action="../../Backend/Router//loginRouter.php?acao=validarLogin">
+        <form method="POST" action="../../Backend/Router/loginRouter.php?acao=validarLogin">
             <input type="text" name="nome" placeholder="Nome">
             <input type="text" name="senha" placeholder="Senha">
             

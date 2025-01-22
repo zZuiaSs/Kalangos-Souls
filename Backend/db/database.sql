@@ -22,3 +22,6 @@ CREATE TABLE reservas (
     id_espaco INT,
     horario DATE NOT NULL
 );
+
+select*from usuario;
+show tables;
