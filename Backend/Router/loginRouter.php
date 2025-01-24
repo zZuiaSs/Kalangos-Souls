@@ -14,7 +14,7 @@
 
                 if (!(empty($nome) || empty($senha))) {
 
-                    $resposta = $loginController->Login($nome, $senha);
+                    $resposta = $loginController->login($nome, $senha);
 
                     if ($resposta) {
                         header("Location: ../../Pages/Home/index.php");
