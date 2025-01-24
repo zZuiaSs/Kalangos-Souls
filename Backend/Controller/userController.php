@@ -6,14 +6,12 @@
 
         private $conn;
     
-        public function __construct()
-        {
+        public function __construct() {
             $objDb = new Database();
             $this->conn = $objDb->connect();
         }
 
-        public function getAllUsers()
-        {
+        public function getAllUsers() {
             try {
                 $sql = "SELECT * FROM usuario";
                 $db = $this->conn->prepare($sql);
@@ -24,13 +22,15 @@
             }
         }
 
-        public function createUser($nome, $email, $senha)
-        {
+        public function createUser($nome, $email, $senha, $telefone) {
             try {
-                $sql = "INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)";
+                $sql = "INSERT INTO usuario (nome, email, senha, telefone) VALUES (:nome, :senha, :email, :telefone)";
                 $db = $this->conn->prepare($sql);
+
                 $db->bindParam(":nome", $nome);
+                $db->bindParam(":senha", $senha);
                 $db->bindParam(":email", $email);
+                $db->bindParam(":telefone", $telefone);
 
     
                 return $db->execute();
@@ -41,33 +41,33 @@
             }
         }
     
-        public function deleteUser($id) {
-            try {
-                $sql = "DELETE FROM usuario WHERE id = :id";
-                $db = $this->conn->prepare($sql);
-                $db->bindParam(":id", $id);
-                return $db->execute();
-            }
+        // public function deleteUser($id) {
+        //     try {
+        //         $sql = "DELETE FROM usuario WHERE id = :id";
+        //         $db = $this->conn->prepare($sql);
+        //         $db->bindParam(":id", $id);
+        //         return $db->execute();
+        //     }
             
-            catch (\Exception $th) {
-                return $th->getMessage();
-            }
-        }
+        //     catch (\Exception $th) {
+        //         return $th->getMessage();
+        //     }
+        // }
     
-        public function updateUser($id, $nome, $email) {
-            try {
-                $sql = "UPDATE usuario SET nome = :nome, email = :email WHERE id = :id";
-                $db = $this->conn->prepare($sql);
-                $db->bindParam(":nome", $nome);
-                $db->bindParam(":email", $email);
-                $db->bindParam(":id", $id);
-                return $db->execute();
-            }
+        // public function updateUser($id, $nome, $email) {
+        //     try {
+        //         $sql = "UPDATE usuario SET nome = :nome, email = :email WHERE id = :id";
+        //         $db = $this->conn->prepare($sql);
+        //         $db->bindParam(":nome", $nome);
+        //         $db->bindParam(":email", $email);
+        //         $db->bindParam(":id", $id);
+        //         return $db->execute();
+        //     }
             
-            catch (\Exception $th) {
-                return $th->getMessage();
-            }
-        }
+        //     catch (\Exception $th) {
+        //         return $th->getMessage();
+        //     }
+        // }
 
         public function getUserById($id) {
             try {

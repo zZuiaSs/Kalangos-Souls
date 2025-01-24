@@ -19,7 +19,9 @@
                     if ($resposta) {
                         header("Location: ../../Pages/Home/index.php");
                     } else {
-                        echo "Usuário não encontrado...";
+                        header("Location: ../../Pages/Login/index.php");
+                        $nome = "";
+                        $senha = "";
                     }
                 
                 } else {

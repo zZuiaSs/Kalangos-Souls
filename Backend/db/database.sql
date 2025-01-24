@@ -23,5 +23,5 @@ CREATE TABLE reservas (
     horario DATE NOT NULL
 );
 
-select*from usuario;
+select * from usuario;
 show tables;
