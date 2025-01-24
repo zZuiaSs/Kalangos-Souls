@@ -10,7 +10,8 @@
 
 <body>
 
-    <div class="fundo">
+    <img class="fund" src="https://www.booking-wp-plugin.com/wp-content/uploads/2019/07/Banner-31a-jpg.webp" alt="">
+    <!-- <div class="fundo">
         <h1>Login</h1>
 
         <form method="POST" action="../../Backend/Router/loginRouter.php?acao=validarLogin">
@@ -19,7 +20,7 @@
             
             <button type="submit" id="kayke" class="btn btn-outline-success">Enviar</button>
         </form>
-    </div>
+    </div> -->
 
 </body>
 </html>

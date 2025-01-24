@@ -3,16 +3,22 @@
     padding: 0;
 }
 
+.fund {
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
 body {
     background-color: #1d1d1d;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;   
+    width: 100vw;
+    height: 100vh; 
 }
 
 .fundo {
+    position: absolute;
     display: flex;
     background-color: rgb(43, 43, 43);
     justify-content: center;
@@ -22,12 +28,6 @@ body {
     width: 300px;
     padding: 20px;
     border-radius: 10px;
-}
-
-h1 {
-    display: flex;
-    color: white;
-    margin-bottom: 15px;
 }
 
 input {
