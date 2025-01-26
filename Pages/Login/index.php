@@ -99,7 +99,7 @@
     }
 
     input:focus {
-        border: 1px solid green;
+        box-shadow: inset 0 0px 3px green;
     }
 
     .buttons {
