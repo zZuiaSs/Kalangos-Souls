@@ -14,11 +14,15 @@
             <h1>Login</h1>
 
             <form method="POST" action="../../Backend/Router/loginRouter.php?acao=validarLogin">
-                <input type="text" name="nome" placeholder="Nome" autocomplete="off">
-                <input type="text" name="senha" placeholder="Senha" autocomplete="off">
+                <input type="text" name="nome" placeholder="Nome" autocomplete="off" required>
+                <input type="password" name="senha" placeholder="Senha" autocomplete="off" required>
 
                 <div class="buttons">
+<<<<<<< Updated upstream
                     <button type="button" onclick = "window.location.href='../Cadastro/index.php'">Criar conta</button>
+=======
+                    <button id="criar-conta">Criar conta</button>
+>>>>>>> Stashed changes
                     <button type="submit" id="enviar">Enviar</button>
                 </div>
             </form>
