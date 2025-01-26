@@ -25,7 +25,7 @@
                     }
                 
                 } else {
-                    echo "Todos os campos são obrigatórios...";
+                    header("Location: ../../Pages/Login/index.php");
                 }
                 break;
             
