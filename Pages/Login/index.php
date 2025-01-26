@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    
+
     <div class="posicao">
         <div class="fundo">
             <h1>Login</h1>
@@ -17,7 +17,7 @@
                 <input type="password" name="senha" placeholder="Senha" autocomplete="off" required>
 
                 <div class="buttons">
-                    <button type="button" onclick = "window.location.href='../Cadastro/index.php'">Criar conta</button>
+                    <button type="button" id="criar-conta" onclick="window.location.href='../Cadastro/index.php'">Criar conta</button>
                     <button type="submit" id="enviar">Enviar</button>
                 </div>
             </form>
