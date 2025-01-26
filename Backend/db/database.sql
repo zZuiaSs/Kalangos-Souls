@@ -24,4 +24,3 @@ CREATE TABLE reservas (
 );
 
 select * from usuario;
-show tables;
