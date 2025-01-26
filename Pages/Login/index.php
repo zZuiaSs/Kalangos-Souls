@@ -19,7 +19,11 @@
 
                 <div class="buttons">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     <button type="button" onclick = "window.location.href='../Cadastro/index.php'">Criar conta</button>
+=======
+                    <button id="criar-conta">Criar conta</button>
+>>>>>>> Stashed changes
 =======
                     <button id="criar-conta">Criar conta</button>
 >>>>>>> Stashed changes
