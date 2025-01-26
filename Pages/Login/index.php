@@ -7,8 +7,7 @@
 </head>
 
 <body>
-
-    <!-- <img class="fund" src="https://www.booking-wp-plugin.com/wp-content/uploads/2019/07/Banner-31a-jpg.webp" alt=""> -->
+    
     <div class="posicao">
         <div class="fundo">
             <h1>Login</h1>
@@ -18,15 +17,7 @@
                 <input type="password" name="senha" placeholder="Senha" autocomplete="off" required>
 
                 <div class="buttons">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                     <button type="button" onclick = "window.location.href='../Cadastro/index.php'">Criar conta</button>
-=======
-                    <button id="criar-conta">Criar conta</button>
->>>>>>> Stashed changes
-=======
-                    <button id="criar-conta">Criar conta</button>
->>>>>>> Stashed changes
                     <button type="submit" id="enviar">Enviar</button>
                 </div>
             </form>
