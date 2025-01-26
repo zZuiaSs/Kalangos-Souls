@@ -18,7 +18,7 @@
                 <input type="text" name="senha" placeholder="Senha" autocomplete="off">
 
                 <div class="buttons">
-                    <a href="../Cadastro/index.php" id="criar-conta">Criar conta</a>
+                    <button type="button" onclick = "window.location.href='../Cadastro/index.php'">Criar conta</button>
                     <button type="submit" id="enviar">Enviar</button>
                 </div>
             </form>
