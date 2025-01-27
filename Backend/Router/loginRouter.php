@@ -19,13 +19,13 @@
                     if ($resposta) {
                         header("Location: ../../Pages/Home/index.php");
                     } else {
-                        header("Location: ../../Pages/Login/index.php");
+                        header("Location: ../../Pages/Cadastro/index.php");
                         $nome = "";
                         $senha = "";
                     }
                 
                 } else {
-                    header("Location: ../../Pages/Login/index.php");
+                    header("Location: ../../Pages/Cadastro/index.php");
                 }
                 break;
             

@@ -42,11 +42,7 @@
     <title>Cadastrar</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -58,7 +54,7 @@
             <div class="alert alert-danger" role="alert"><?php echo htmlspecialchars($error_message); ?></div>
         <?php } ?>
 
-        <form action="<?php echo "../../backend/router/userRouter.php?acao=" . htmlspecialchars($acao); ?>" method="POST">
+        <form action="<?php echo "../../Backend/Router/index.php?acao=" . htmlspecialchars($acao); ?>" method="POST">
             <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo htmlspecialchars($usuario['Nome'] ?? ''); ?>" required>
             <input type="password" class="form-control" name="senha" placeholder="Senha" value="<?php echo htmlspecialchars($usuario['Senha'] ?? ''); ?>" required>
             <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo htmlspecialchars($usuario['Email'] ?? ''); ?>" required>
