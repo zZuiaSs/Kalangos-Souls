@@ -8,10 +8,11 @@
 </head>
 
 <body>
+
   <div class="container">
     <aside class="sidebar">
         <div class="profile-section">
-          <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 15.15.55_34226212.jpg" alt="Foto de perfil" class="profile-img">
+          <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 15.15.55_34226212.jpg" alt="Foto de perfil" class="profile-img">
           <h2 class="profile-name">Pedro</h2>
         </div>
       <div class="menu">
@@ -24,62 +25,61 @@
 
     <header class="topbar">
         <button class="topbar-btn green">
-        <span class="icon"><img src="./add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Espaço
+        <span class="icon"><img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Espaço
         </button>
         <button class="topbar-btn blue">
-        <span class="icon"><img src="./calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Reserva
+        <span class="icon"><img src="../../C ----------------------/calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Reserva
         </button>
         <button class="topbar-btn orange">
-        <span class="icon"><img src="./group_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="aaa" class="icon"></span> Convidados
+        <span class="icon"><img src="../../C ----------------------/group_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="aaa" class="icon"></span> Convidados
         </button>
     </header>
 
-    <div class="fundo">
-        <div class="main-content">
+    <div class="main-content">
 
-            <main class="content">
-                <h1 class="content-title"> <img src="./add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
-                <div class="card-grid">
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Espaço Canto Belo</h3>
-                    <p class="card-subtitle">Espaço: 100 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                </div>
-            </main>
-        </div>
+        <main class="content">
+            <h1 class="content-title"> <img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
+            <div class="card-grid">
+            <div class="card">
+                <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
+                <h3 class="card-title">Cantinho do Lukeee</h3>
+                <p class="card-subtitle">Espaço: 10 vagas</p>
+                <button class="card-btn">Reservar</button>
+            </div>
+            <div class="card">
+                <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
+                <h3 class="card-title">Cantinho do Lukeee</h3>
+                <p class="card-subtitle">Espaço: 10 vagas</p>
+                <button class="card-btn">Reservar</button>
+            </div>
+            <div class="card">
+                <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
+                <h3 class="card-title">Espaço Canto Belo</h3>
+                <p class="card-subtitle">Espaço: 100 vagas</p>
+                <button class="card-btn">Reservar</button>
+            </div>
+            <div class="card">
+                <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
+                <h3 class="card-title">Cantinho do Lukeee</h3>
+                <p class="card-subtitle">Espaço: 10 vagas</p>
+                <button class="card-btn">Reservar</button>
+            </div>
+            <div class="card">
+                <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
+                <h3 class="card-title">Cantinho do Lukeee</h3>
+                <p class="card-subtitle">Espaço: 10 vagas</p>
+                <button class="card-btn">Reservar</button>
+            </div>
+            <div class="card">
+                <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
+                <h3 class="card-title">Cantinho do Lukeee</h3>
+                <p class="card-subtitle">Espaço: 10 vagas</p>
+                <button class="card-btn">Reservar</button>
+            </div>
+            </div>
+        </main>
     </div>
+
   </div>
 
 </body>
