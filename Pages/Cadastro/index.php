@@ -1,21 +1,17 @@
 <?php
 
     session_start();
-
-    if (!isset($_SESSION["id_usuario"])) {
-      header('Location: ../../Pages/Login/index.php');
-      exit();
-    }
-
+    
+    
     require_once __DIR__ . '/../../Backend/Controller/userController.php';
     $userController = new userController();
 
     $usuario = [
       'id' => '',
       'Nome' => '',
+      'Senha' => '',
       'Email' => '',
       'Telefone' => '',
-      'Senha' => '',
     ];
 
     $acao = "cadastrar";
@@ -41,27 +37,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-  <div class="fundo">
-    <h1>Cadastrar</h1>
+  <div class="posicao">
+    <div class="fundo">
+      <h1>Cadastrar</h1>
 
-    <?php if (!empty($error_message)) { ?>
-        <div class="alert alert-danger" role="alert"><?php echo htmlspecialchars($error_message); ?></div>
-    <?php } ?>
+      <form action="<?php echo "../../Backend/Router/index.php?acao=$acao"?>" method="POST">
+        <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo $usuario['Nome'];?>" required autocomplete="off">
+        <input type="password" class="form-control" name="senha" placeholder="Senha" value="<?php echo $usuario['Senha']; ?>" required autocomplete="off">
+        <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $usuario['Email']; ?>" required autocomplete="off">
+        <input type="tel" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo $usuario['Telefone']; ?>" required autocomplete="off">
 
-    <form action="<?php echo "../../Backend/Router/index.php?acao=" . htmlspecialchars($acao); ?>" method="POST">
-      <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo htmlspecialchars($usuario['Nome'] ?? ''); ?>" required>
-      <input type="password" class="form-control" name="senha" placeholder="Senha" value="<?php echo htmlspecialchars($usuario['Senha'] ?? ''); ?>" required>
-      <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo htmlspecialchars($usuario['Email'] ?? ''); ?>" required>
-      <input type="tel" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo htmlspecialchars($usuario['Telefone'] ?? ''); ?>" required>
-
-      <button type="submit" id="kayke" class="btn btn-outline-success">Enviar</button>
-    </form>
+        <button type="submit" id="kayke">Enviar</button>
+      </form>
+    </div>
   </div>
 
 </body>
