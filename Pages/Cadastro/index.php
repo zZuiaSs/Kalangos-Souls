@@ -1,90 +1,68 @@
+<?php
+
+    session_start();
+
+    if (!isset($_SESSION["id_usuario"])) {
+      header('Location: ../../Pages/Login/index.php');
+      exit();
+    }
+
+    require_once __DIR__ . '/../../Backend/Controller/userController.php';
+    $userController = new userController();
+
+    $usuario = [
+      'id' => '',
+      'Nome' => '',
+      'Email' => '',
+      'Telefone' => '',
+      'Senha' => '',
+    ];
+
+    $acao = "cadastrar";
+    
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $acao = "update";
+        $usuario = $userController->getUserById($id);
+
+        if (!$usuario) {
+            echo "Usuário não encontrado...";
+        }
+    }
+
+?>
+
+<!-- H T M L -->
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interface</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-  <div class="container">
-    <!-- Barra lateral -->
-    <aside class="sidebar">
-        <div class="profile-section">
-          <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 15.15.55_34226212.jpg" alt="Foto de perfil" class="profile-img">
-          <h2 class="profile-name">Pedro</h2>
-        </div>
-      <div class="menu">
-        <button class="menu-item">Espaços reservados</button>
-        <button class="menu-item">Editar perfil do usuário</button>
-        <button class="menu-item">Métodos de pagamento</button>
-      </div>
-      <button class="logout">Log out</button>
-    </aside>
 
-    <!-- Barra superior -->
-    <header class="topbar">
-        <button class="topbar-btn green">
-        <span class="icon"><img src="./add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Espaço
-        </button>
-        <button class="topbar-btn blue">
-        <span class="icon"><img src="./calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Reserva
-        </button>
-        <button class="topbar-btn orange">
-        <span class="icon"><img src="./group_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Convidados
-        </button>
-    </header>
+  <div class="fundo">
+    <h1>Cadastrar</h1>
 
-    <!-- Conteúdo principal -->
-    <div class="fundo">
-        <div class="main-content">
+    <?php if (!empty($error_message)) { ?>
+        <div class="alert alert-danger" role="alert"><?php echo htmlspecialchars($error_message); ?></div>
+    <?php } ?>
 
-            <!-- Área de conteúdo -->
-            <main class="content">
-                <h1 class="content-title"> <img src="./add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
-                <div class="card-grid">
-                <!-- Card -->
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <div class="card">
-                    <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                    <h3 class="card-title">Cantinho do Lukeee</h3>
-                    <p class="card-subtitle">Espaço: 10 vagas</p>
-                    <button class="card-btn">Reservar</button>
-                </div>
-                <!-- Replicar cards para outros itens -->
-                </div>
-            </main>
-        </div>
-    </div>
+    <form action="<?php echo "../../Backend/Router/index.php?acao=" . htmlspecialchars($acao); ?>" method="POST">
+      <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo htmlspecialchars($usuario['Nome'] ?? ''); ?>" required>
+      <input type="password" class="form-control" name="senha" placeholder="Senha" value="<?php echo htmlspecialchars($usuario['Senha'] ?? ''); ?>" required>
+      <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo htmlspecialchars($usuario['Email'] ?? ''); ?>" required>
+      <input type="tel" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo htmlspecialchars($usuario['Telefone'] ?? ''); ?>" required>
+
+      <button type="submit" id="kayke" class="btn btn-outline-success">Enviar</button>
+    </form>
   </div>
+
 </body>
 </html>
