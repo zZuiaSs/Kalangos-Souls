@@ -31,7 +31,7 @@
         <span class="icon"><img src="./calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Reserva
         </button>
         <button class="topbar-btn orange">
-        <span class="icon"><img src="./group_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="aaa" class="icon"></span> Convidados
+        <span class="icon"><img src="./group_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Convidados
         </button>
     </header>
 
