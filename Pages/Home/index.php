@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Interface</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,10 +11,10 @@
   <div class="container">
     <!-- Barra lateral -->
     <aside class="sidebar">
-      <div class="profile-section">
-        <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 15.15.55_34226212.jpg" alt="Foto de perfil" class="profile-img">
-        <h2 class="profile-name">Lukeee</h2>
-      </div>
+        <div class="profile-section">
+          <img src="./Imagem do WhatsApp de 2025-01-26 à(s) 15.15.55_34226212.jpg" alt="Foto de perfil" class="profile-img">
+          <h2 class="profile-name">Pedro</h2>
+        </div>
       <div class="menu">
         <button class="menu-item">Espaços reservados</button>
         <button class="menu-item">Editar perfil do usuário</button>
@@ -22,7 +22,7 @@
       </div>
       <button class="logout">Log out</button>
     </aside>
-    
+
     <!-- Barra superior -->
     <header class="topbar">
         <button class="topbar-btn green">
@@ -42,7 +42,7 @@
 
             <!-- Área de conteúdo -->
             <main class="content">
-                <h1 class="content-title">Seus espaços</h1>
+                <h1 class="content-title"> <img src="./add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
                 <div class="card-grid">
                 <!-- Card -->
                 <div class="card">
@@ -87,5 +87,6 @@
         </div>
     </div>
   </div>
+
 </body>
 </html>
