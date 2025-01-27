@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ . "../../Controller/userController.php";
+    require_once __DIR__ . "../../../Backend/Controller/userController.php";
     $userController = new userController();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
