@@ -10,7 +10,7 @@
 
     <div class="posicao">
         <div class="fundo">
-            <h1>Login</h1>
+            <h1 id="texto"></h1>
 
             <form method="POST" action="../../Backend/Router/loginRouter.php?acao=validarLogin">
                 <input type="text" name="nome" placeholder="Nome" autocomplete="off" required>
@@ -42,7 +42,7 @@
 
     h1 {
         font-size: 40px;
-        color: black;
+        color: white;
     }
 
     .posicao {
@@ -55,7 +55,7 @@
     }
 
     body {
-        background-color:rgb(255, 255, 255);
+        background-color:rgb(22, 22, 22);
         display: flex;
         width: 100vw;
         height: 100vh; 
@@ -64,8 +64,9 @@
     .fundo {
         position: absolute;
         display: flex;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(29, 29, 29);
         box-shadow: 0 0px 30px rgba(0, 0, 0, 0.25);
+        border: 2px solid green;
         justify-content: center;
         align-items: center;    
         flex-direction: column;
@@ -77,8 +78,8 @@
     }
 
     input {
-        background-color:rgb(230, 230, 230);
-        color: black;
+        background-color:rgb(44, 44, 44);
+        color: white;
         display: flex;
         padding: 10px;
         width: auto;
@@ -98,7 +99,7 @@
     }
 
     input:focus {
-        box-shadow: inset 0 0px 3px green;
+        border: 1px solid green;
     }
 
     .buttons {
@@ -141,3 +142,20 @@
     }
 
 </style>
+
+<script>
+    const h1 = document.getElementById('texto');
+    const text = 'Login';
+
+    let i = 0;
+
+    function escreverTexto() {
+      if (i < text.length) {
+        h1.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(escreverTexto, 75);
+      }
+    }
+
+    escreverTexto();
+</script>
