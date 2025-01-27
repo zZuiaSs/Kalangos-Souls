@@ -3,7 +3,7 @@
     session_start();
     
     
-    require_once __DIR__ . '/../../Backend/Controller/userController.php';
+    require_once __DIR__ . '../../../Backend/Controller/userController.php';
     $userController = new userController();
 
     $usuario = [
@@ -46,7 +46,7 @@
     <div class="fundo">
       <h1>Cadastrar</h1>
 
-      <form action="<?php echo "../../Backend/Router/index.php?acao=$acao"?>" method="POST">
+      <form action="<?php echo "../../Backend/Router/userRouter.php?acao=cadastrar"?>" method="POST">
         <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo $usuario['Nome'];?>" required autocomplete="off">
         <input type="password" class="form-control" name="senha" placeholder="Senha" value="<?php echo $usuario['Senha']; ?>" required autocomplete="off">
         <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $usuario['Email']; ?>" required autocomplete="off">
