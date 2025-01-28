@@ -38,13 +38,10 @@
     <div class="principal">
       <header class="topbar">
         <button class="topbar-btn green">
-          <span class="icon"><img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Espaço
+          <span class="icon"><img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Cadastrar espaço
         </button>
         <button class="topbar-btn blue">
-          <span class="icon"><img src="../../C ----------------------/calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Reserva
-        </button>
-        <button class="topbar-btn orange">
-          <span class="icon"><img src="../../C ----------------------/group_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="aaa" class="icon"></span> Convidados
+          <span class="icon"><img src="../../C ----------------------/calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Minhas reservas
         </button>
       </header>
 
@@ -54,7 +51,7 @@
               <div class="card-grid">
               <?php
                 $sql = "SELECT id, nome, capacidade, descricao FROM espaco";
-                $result = $conn->query($sql)
+                $resulta = $conn->query($sql)
               ?>
               </div>
           </main>
@@ -64,3 +61,5 @@
 
 </body>
 </html>
+
+
