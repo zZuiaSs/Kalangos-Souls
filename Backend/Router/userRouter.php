@@ -17,7 +17,7 @@
                     $resposta = $userController->createUser($nome, $senha, $email, $telefone);
 
                     if ($resposta) {
-                        header("Location: ../../Pages/Home/index.php");
+                        header("Location: ../../Pages/Login/index.php");
                     }
                 }
                 break;

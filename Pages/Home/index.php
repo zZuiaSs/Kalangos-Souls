@@ -1,18 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interface</title>
+  <title>Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  
   <div class="container">
-    
     <div class="container-menu">
       <div class="capa">
         <!--  -->
@@ -53,44 +50,11 @@
 
       <div class="main-content">
           <main class="content">
-              <h1 class="content-title"> <img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
+              <h1 class="content-title"><img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
               <div class="card-grid">
-              <div class="card">
-                  <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                  <h3 class="card-title">Cantinho do Lukeee</h3>
-                  <p class="card-subtitle">Espaço: 10 vagas</p>
-                  <button class="card-btn">Reservar</button>
-              </div>
-              <div class="card">
-                  <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                  <h3 class="card-title">Cantinho do Lukeee</h3>
-                  <p class="card-subtitle">Espaço: 10 vagas</p>
-                  <button class="card-btn">Reservar</button>
-              </div>
-              <div class="card">
-                  <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                  <h3 class="card-title">Espaço Canto Belo</h3>
-                  <p class="card-subtitle">Espaço: 100 vagas</p>
-                  <button class="card-btn">Reservar</button>
-              </div>
-              <div class="card">
-                  <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                  <h3 class="card-title">Cantinho do Lukeee</h3>
-                  <p class="card-subtitle">Espaço: 10 vagas</p>
-                  <button class="card-btn">Reservar</button>
-              </div>
-              <div class="card">
-                  <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                  <h3 class="card-title">Cantinho do Lukeee</h3>
-                  <p class="card-subtitle">Espaço: 10 vagas</p>
-                  <button class="card-btn">Reservar</button>
-              </div>
-              <div class="card">
-                  <img src="../../C ----------------------/Imagem do WhatsApp de 2025-01-26 à(s) 17.04.54_c5322831.jpg" alt="Imagem do espaço" class="card-img">
-                  <h3 class="card-title">Cantinho do Lukeee</h3>
-                  <p class="card-subtitle">Espaço: 10 vagas</p>
-                  <button class="card-btn">Reservar</button>
-              </div>
+              <?php
+                $sql = "SELECT * FROM espacos WHERE nome "  
+              ?>
               </div>
           </main>
       </div>
