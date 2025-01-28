@@ -12,3 +12,17 @@ const h1 = document.getElementById('texto');
     }
 
     escreverTexto();
+
+var nome = document.getElementById("Nome");
+var senha = document.getElementById("Senha")
+var entrar = document.getElementById("Enviar");
+    
+var campo_mensagem = document.getElementById("mensagem");
+let verficarAtivo = true;
+    
+entrar.addEventListener('click', function() {
+  if(!verficarAtivo)return;
+    
+    if()
+
+});

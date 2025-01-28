@@ -41,7 +41,10 @@
           <span class="icon"><img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Cadastrar espaço
         </button>
         <button class="topbar-btn blue">
-          <span class="icon"><img src="../../C ----------------------/calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Minhas reservas
+          <span class="icon"><img src="../../C ----------------------/calendar_month_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon"></span> Reserva
+        </button>
+        <button class="topbar-btn orange">
+          <span class="icon"><img src="../../C ----------------------/group_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="aaa" class="icon"></span> Convidados
         </button>
       </header>
 
@@ -49,11 +52,7 @@
           <main class="content">
               <h1 class="content-title"><img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
               <div class="card-grid">
-              <?php
-                $sql = "SELECT id, nome, capacidade, descricao FROM espaco";
-                $resulta = $conn->query($sql)
-              ?>
-              </div>
+              
           </main>
       </div>
     </div>
@@ -61,5 +60,3 @@
 
 </body>
 </html>
-
-

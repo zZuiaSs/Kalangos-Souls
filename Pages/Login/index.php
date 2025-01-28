@@ -20,6 +20,7 @@
                 <div class="buttons">
                     <button type="button" id="criar-conta" onclick="window.location.href='../Cadastro/index.php'">Criar conta</button>
                     <button type="submit" id="enviar">Enviar</button>
+                    <div id="mensagem"></div>
                 </div>
             </form>
         </div>
