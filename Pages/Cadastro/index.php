@@ -44,7 +44,7 @@
 
   <div class="posicao">
     <div class="fundo">
-      <h1>Cadastrar</h1>
+      <h1 id="texto"></h1>
 
       <form action="<?php echo "../../Backend/Router/userRouter.php?acao=cadastrar"?>" method="POST">
         <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo $usuario['Nome'];?>" required autocomplete="off">
@@ -57,5 +57,6 @@
     </div>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>

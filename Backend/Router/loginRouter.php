@@ -25,7 +25,7 @@
                     }
                 
                 } else {
-                    header("Location: ../../Pages/Cadastro/index.php");
+                    header("Location: ../../Pages/Login/index.php");
                 }
                 break;
             
