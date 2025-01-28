@@ -53,7 +53,8 @@
               <h1 class="content-title"><img src="../../C ----------------------/add_home_25dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" class="icon2">Espaços disponíveis</h1>
               <div class="card-grid">
               <?php
-                $sql = "SELECT * FROM espacos WHERE nome "  
+                $sql = "SELECT id, nome, capacidade, descricao FROM espaco";
+                $result = $conn->query($sql)
               ?>
               </div>
           </main>
