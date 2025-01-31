@@ -1,9 +1,8 @@
 <?php
 
     include_once __DIR__ . "../../db/database.php";
-
+    
     class spaceController {
-
         private $conn;
 
         public function __construct() {
@@ -13,14 +12,22 @@
 
         public function getAllSpaces() {
             try {
-                $sql = "";
+                $sql = "SELECT * FROM espacos";
+                $db = $this->conn->prepare($sql);
+                $db->execute();
+                return $db->fetchAll(PDO::FETCH_ASSOC);
+            } catch(\Exception $th) {
+                return $th->getMEssage();        
+            }
+        }
+
+        public function createSpaces() {
+            try {
+                
             } catch (\Throwable $th) {
                 //throw $th;
             }
         }
-    
     }
 
-?>
-
-<!-- Inserir espaços no banco de dados -->
+?> 

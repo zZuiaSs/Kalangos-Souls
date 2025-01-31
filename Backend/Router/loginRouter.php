@@ -1,7 +1,6 @@
 <?php
 
     require_once __DIR__ . "../../Controller/loginController.php";
-
     $loginController = new loginController();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
