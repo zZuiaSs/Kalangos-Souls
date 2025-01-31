@@ -1,7 +1,8 @@
-document.querySelectorAll('.topbar-btn').forEach((button, index)=>{
-    button.addEventListener{'click', ()=>{
-        switch(index){
-            case 0:
-                
+// 1
 
-}
+let fullName = document.querySelector('.profile-name').textContent;
+let firstLetter = fullName.charAt(0);
+document.getElementById('primeira-letra').textContent = firstLetter;
+
+// 2
+

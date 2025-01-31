@@ -29,6 +29,12 @@
                 }
                 break;
             
+            case 'logout':
+                session_unset();
+                session_destroy();
+                header("Location: ../../Pages/Login/index.php");
+                exit();
+
             default:
                 echo "Ação não encontrada...";
                 break;

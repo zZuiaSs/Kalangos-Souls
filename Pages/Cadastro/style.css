@@ -67,6 +67,7 @@ form {
 
 input:focus {
     border: 1px solid green;
+    background-color: rgb(29, 29, 29);
 }
 
 #kayke {
