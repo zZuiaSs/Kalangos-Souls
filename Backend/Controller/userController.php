@@ -3,7 +3,6 @@
     include_once __DIR__ . "/../db/database.php";
     
     class userController {
-
         private $conn;
     
         public function __construct() {
@@ -17,6 +16,7 @@
                 $db = $this->conn->prepare($sql);
                 $db->execute();
                 return $db->fetchAll(PDO::FETCH_ASSOC);
+                
             } catch (\Exception $th) {
                 return $th->getMessage();
             }
@@ -32,11 +32,9 @@
                 $db->bindParam(":email", $email);
                 $db->bindParam(":telefone", $telefone);
 
-    
                 return $db->execute();
-            }
-            
-            catch (\Exception $th) {
+
+            } catch (\Exception $th) {
                 return $th->getMessage();
             }
         }
@@ -76,13 +74,11 @@
                 $db->bindParam(":id", $id);
                 $db->execute();
                 return $db->fetch(PDO::FETCH_ASSOC);
-            }
-            
-            catch (\Exception $th) {
+
+            } catch (\Exception $th) {
                 return $th->getMessage();
             }
         }
-
     }
 
 ?>

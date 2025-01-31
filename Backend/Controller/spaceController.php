@@ -16,8 +16,9 @@
                 $db = $this->conn->prepare($sql);
                 $db->execute();
                 return $db->fetchAll(PDO::FETCH_ASSOC);
+                
             } catch(\Exception $th) {
-                return $th->getMEssage();        
+                return $th->getMessage();        
             }
         }
 
