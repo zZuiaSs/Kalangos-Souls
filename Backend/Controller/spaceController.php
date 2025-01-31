@@ -50,7 +50,7 @@
             }
         }
 
-        public function updateSpaces($nome, $tipo, $capacidade, $descricao) {
+        public function updateSpaces($id, $nome, $tipo, $capacidade, $descricao) {
             try {
                 $sql = "UPDATE espacos SET nome = :nome, tipo = :tipo, capacidade = :capacidade, descricao = :descricao WHERE id = :id";
                 $db = $this->conn->prepare($sql);
@@ -65,7 +65,7 @@
             } catch (\Exception $th) {
                 return $th->getMessage();
             }
-        } 
+        }
     }
 
 ?>
