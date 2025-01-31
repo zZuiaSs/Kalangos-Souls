@@ -22,7 +22,7 @@
             }
         }
 
-        public function createSpaces() {
+        public function createSpaces($nome, $capacidade, $descricao) {
             try {
                 
             } catch (\Throwable $th) {
@@ -31,4 +31,4 @@
         }
     }
 
-?> 
+?>

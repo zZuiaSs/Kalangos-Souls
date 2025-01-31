@@ -1,5 +1,6 @@
 <?php
 
+    session_start();
     include_once __DIR__ . "../../db/database.php";
 
     class loginController {
@@ -38,8 +39,8 @@
         }
 
         public function logout() {
-            session_start();
             session_destroy();
+            header("Location: ../../Pages/Login/index.php");
             exit();
         }
     }
