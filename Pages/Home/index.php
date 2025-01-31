@@ -1,11 +1,19 @@
 <?php
 
+  session_start();
   require_once __DIR__ . "../../../Backend/Controller/loginController.php";
 
   if (isset($_POST['logout'])) {
     $loginController = new loginController();
     $loginController->logout();
   }
+
+  if (!isset($_SESSION['usuario_logado'])) {
+    header('Location: ../../Pages/Login/index.php');
+    exit();
+  }
+
+  $usuario = $_SESSION['nome'];
 
 ?>
 
@@ -37,7 +45,7 @@
             <div class="profile-img">
               <h1 style="font-size: 50px; color: greenyellow;" id="primeira-letra"></h1>
             </div>
-            <h1 class="profile-name">Samoel</h1>
+            <h1 class="profile-name"><?php echo $usuario["nome"]; ?></h1>
           </div>
 
           <div class="menu">

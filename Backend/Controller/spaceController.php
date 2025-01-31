@@ -18,15 +18,20 @@
                 return $db->fetchAll(PDO::FETCH_ASSOC);
                 
             } catch(\Exception $th) {
-                return $th->getMessage();        
+                return $th->getMessage();
             }
         }
 
-        public function createSpaces($nome, $capacidade, $descricao) {
+        public function createSpaces($nome, $tipo, $capacidade, $descricao) {
             try {
-                
-            } catch (\Throwable $th) {
-                //throw $th;
+                $sql = "INSERT INTO espacos (nome, tipo, capacidade, descricao)
+                        VALUES ()";
+                $db = $this->conn->prepare($sql);
+                $db->bindParam(":nome", $nome);
+                $db;
+
+            } catch(\Exception $th) {
+                return $th->getMessage();
             }
         }
     }
