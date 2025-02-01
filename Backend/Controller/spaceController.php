@@ -21,7 +21,7 @@
                 return $th->getMessage();
             }
         }
-
+        
         public function createSpaces($nome, $tipo, $capacidade, $descricao) {
             try {
                 $sql = "INSERT INTO espacos (nome, tipo, capacidade, descricao)

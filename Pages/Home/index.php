@@ -8,10 +8,7 @@
     $loginController->logout();
   }
 
-  if (!isset($_SESSION['usuario_logado'])) {
-    header('Location: ../../Pages/Login/index.php');
-    exit();
-  }
+  
 
   $usuario = $_SESSION['nome'];
 
@@ -32,7 +29,12 @@
 
   <!-- S C R I P T -->
 
-  
+  <div class="fundo-editar-perfil">
+    <div class="editar-perfil">
+      <input type="text">Nome
+      <button>Salvar</button>
+    </div>
+  </div>
 
   <!-- C O N T E Ú D O -->
 
@@ -45,7 +47,7 @@
             <div class="profile-img">
               <h1 style="font-size: 50px; color: greenyellow;" id="primeira-letra"></h1>
             </div>
-            <h1 class="profile-name"><?php echo $usuario["nome"]; ?></h1>
+            <h1 class="profile-name">Pedro Macio</h1>
           </div>
 
           <div class="menu">
