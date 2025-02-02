@@ -1,15 +1,9 @@
 <?php
 
+    session_start();
     require_once __DIR__ . "../../Controller/loginController.php";
     $loginController = new loginController();
-
-    session_start();
- 
-    if (!isset($_SESSION['id_usuario'])) { 
-        header('Location: ../../Pages/Login/index.php');
-        exit();
-    }
-
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         switch ($_GET["acao"]) {
@@ -23,7 +17,6 @@
                     $resposta = $loginController->login($nome, $senha);
 
                     if ($resposta) {
-                        $_SESSION['usuario_logado'] = $usuario;
                         header("Location: ../../Pages/Home/index.php");
                     } else {
                         header("Location: ../../Pages/Login/index.php");

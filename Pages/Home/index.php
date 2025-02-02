@@ -6,11 +6,11 @@
   if (isset($_POST['logout'])) {
     $loginController = new loginController();
     $loginController->logout();
+    header("Location: ../../Pages/Login/index.php");
+    exit();
   }
 
-  
-
-  $usuario = $_SESSION['nome'];
+  $usuario = htmlspecialchars($_SESSION['nome']);
 
 ?>
 
@@ -47,7 +47,7 @@
             <div class="profile-img">
               <h1 style="font-size: 50px; color: greenyellow;" id="primeira-letra"></h1>
             </div>
-            <h1 class="profile-name">Pedro Macio</h1>
+            <h1 class="profile-name"><?php echo $usuario; ?></h1>
           </div>
 
           <div class="menu">
