@@ -1,30 +1,24 @@
+<!-- P H P -->
+
 <?php
 
-    session_start();
-    
-    
-    require_once __DIR__ . '../../../Backend/Controller/userController.php';
-    $userController = new userController();
+  session_start();
 
-    $usuario = [
-      'id' => '',
-      'Nome' => '',
-      'Senha' => '',
-      'Email' => '',
-      'Telefone' => '',
-    ];
+  require_once __DIR__ . '../../../Backend/Controller/userController.php';
+  require_once __DIR__ . '../../../Backend/Router/userRouter.php';
+  $userController = new userController();
 
-    $acao = "cadastrar";
-    
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $acao = "update";
-        $usuario = $userController->getUserById($id);
+  $usuario = [
+    'id' => '',
+    'Nome' => '',
+    'Senha' => '',
+    'Email' => '',
+    'Telefone' => ''
+  ];
 
-        if (!$usuario) {
-            echo "Usuário não encontrado...";
-        }
-    }
+  if (isset($_SESSION['erro'])) {
+    $mensagem_erro = $_SESSION['erro'];
+  }
 
 ?>
 
@@ -33,30 +27,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar</title>
 
-    <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./cadastro.css">
 </head>
 
 <body>
 
-  <div class="posicao">
+  <div class="container">
     <div class="fundo">
-      <h1 id="texto"></h1>
+      <div class="titulo">
+        <div class="fechar-texto">
+          <button id="fechar">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+          </button>
+          <h1 id="texto"></h1>
+        </div>
 
-      <form action="<?php echo "../../Backend/Router/userRouter.php?acao=cadastrar"?>" method="POST">
-        <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo $usuario['Nome'];?>" required autocomplete="off">
-        <input type="password" class="form-control" name="senha" placeholder="Senha" value="<?php echo $usuario['Senha']; ?>" required autocomplete="off">
-        <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $usuario['Email']; ?>" required autocomplete="off">
-        <input type="tel" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo $usuario['Telefone']; ?>" required autocomplete="off">
+        <div>
+          <img id="chamado" src="https://cdn.pixabay.com/photo/2017/02/01/00/33/animal-2028598_960_720.png" alt="">
+          <p>cadastre-se na alugossauro e<br>faça coisas incríveis...</p>
+        </div>
+      </div>
 
-        <button type="submit" id="kayke">Enviar</button>
-      </form>
+      <div class="form-group">
+        <form action="<?php echo "../../Backend/Router/userRouter.php?acao=cadastrar"?>" method="POST">
+          <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo $usuario['Nome'];?>" required autocomplete="off">
+          <input type="text" class="form-control" name="senha" placeholder="Senha" value="<?php echo $usuario['Senha']; ?>" required autocomplete="off">
+          <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $usuario['Email']; ?>" required autocomplete="off">
+          <input type="text" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo $usuario['Telefone']; ?>" required autocomplete="off">
+
+          <div class="submit-area">
+            <div id="mensagem_erro"><?php echo $mensagem_erro; ?></div>
+            <button type="submit" id="kayke">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
+  <!-- S C R I P T -->
   <script src="script.js"></script>
 </body>
 </html>

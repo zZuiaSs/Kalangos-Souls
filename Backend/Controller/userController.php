@@ -24,16 +24,40 @@
 
         public function createUser($nome, $email, $senha, $telefone) {
             try {
+                $sql_username = "SELECT * FROM usuario WHERE nome = :nome";
+                $stmt_username = $this->conn->prepare($sql_username);
+                $stmt_username->bindParam(":nome", $nome);
+                $stmt_username->execute();
+                $result_username = $stmt_username->fetch(PDO::FETCH_ASSOC);
+    
+                if ($result_username) {
+                    return "Usuário já cadastrado...";
+                }
+
+                $sql_email = "SELECT * FROM usuario WHERE email = :email";
+                $stmt_email = $this->conn->prepare($sql_email);
+                $stmt_email->bindParam(":email", $email);
+                $stmt_email->execute();
+                $result_email = $stmt_email->fetch(PDO::FETCH_ASSOC);
+    
+                if ($result_email) {
+                    return "Email já cadastrado...";
+                }
+    
                 $sql = "INSERT INTO usuario (nome, email, senha, telefone) VALUES (:nome, :senha, :email, :telefone)";
                 $db = $this->conn->prepare($sql);
-
+    
                 $db->bindParam(":nome", $nome);
                 $db->bindParam(":senha", $senha);
                 $db->bindParam(":email", $email);
                 $db->bindParam(":telefone", $telefone);
-
-                return $db->execute();
-
+    
+                if ($db->execute()) {
+                    return true;
+                } else {
+                    return "Erro ao cadastrar você...";
+                }
+    
             } catch (\Exception $th) {
                 return $th->getMessage();
             }

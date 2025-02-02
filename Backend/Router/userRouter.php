@@ -12,16 +12,20 @@
                 $senha = $_POST["senha"];
                 $email = $_POST["email"];
                 $telefone = $_POST["telefone"];
-
-                if (!(empty($nome) || empty($senha) || empty($email) || empty($telefone))) {
-                    $resposta = $userController->createUser($nome, $senha, $email, $telefone);
-
-                    if ($resposta) {
-                        header("Location: ../../Pages/Login/index.php");
-                    }
+                
+                $resposta = $userController->createUser($nome, $senha, $email, $telefone);
+            
+                if ($resposta === true) {
+                    header("Location: ../../Pages/Login/index.php");
+                    exit;
+                } else {
+                    session_start();
+                    header("Location: ../../Pages/Cadastro/index.php");
+                    $_SESSION['erro'] = "Usuário já existe";
+                    exit;
                 }
                 break;
-
+            
             // case "update":
             //     $nome = $_POST["nome"];
             //     $senha = $_POST["senha"];

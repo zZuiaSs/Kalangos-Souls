@@ -1,5 +1,5 @@
 const h1 = document.getElementById('texto');
-const text = 'Cadastrar';
+const text = "Cadastrar";
 
 let i = 0;
 
