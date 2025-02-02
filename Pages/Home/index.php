@@ -10,7 +10,7 @@
     exit();
   }
 
-  $usuario = htmlspecialchars($_SESSION['nome']);
+  $usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
 
 ?>
 
@@ -45,7 +45,7 @@
         <div class="desprofile">
           <div class="profile-section">
             <div class="profile-img">
-              <h1 style="font-size: 50px; color: greenyellow;" id="primeira-letra"></h1>
+              <h1 style="font-size: 50px; color: greenyellow;" id="primeira-letra"><?php echo $usuario[0] ?></h1>
             </div>
             <h1 class="profile-name"><?php echo $usuario; ?></h1>
           </div>
