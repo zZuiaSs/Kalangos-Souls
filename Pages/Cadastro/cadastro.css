@@ -110,6 +110,10 @@ input {
 #mensagem_erro {
     display: flex;
     background-color: rgba(255, 0, 0, 0.75);
+    padding: 7px;
+    border-radius: 999px;
+    border: 2px solid red;
+    color: white;
 }
 
 @media (max-width: 900px) {
@@ -119,7 +123,7 @@ input {
     } .container {
         height: auto;
     } .submit-area {
-        justify-content: center;
+        justify-content: space-between;
     } p, img {
         display: none;
     } .titulo {

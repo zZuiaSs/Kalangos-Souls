@@ -16,9 +16,7 @@
     'Telefone' => ''
   ];
 
-  if (isset($_SESSION['erro'])) {
-    $mensagem_erro = $_SESSION['erro'];
-  }
+  $mensagem_erro = "Conta já criada";
 
 ?>
 
