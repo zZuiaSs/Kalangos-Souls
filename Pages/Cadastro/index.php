@@ -16,7 +16,10 @@
     'Telefone' => ''
   ];
 
-  $mensagem_erro = "Conta já criada";
+  if (isset($_POST["fechar"])) {
+    header("Location: ../Login/index.php");
+    exit(); 
+  }
 
 ?>
 
@@ -38,9 +41,11 @@
     <div class="fundo">
       <div class="titulo">
         <div class="fechar-texto">
-          <button id="fechar">
-            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
-          </button>
+          <form method="POST" style="width: 15%;">
+            <button id="fechar" name="fechar" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+            </button>
+          </form>
           <h1 id="texto"></h1>
         </div>
 
@@ -58,7 +63,6 @@
           <input type="text" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo $usuario['Telefone']; ?>" required autocomplete="off">
 
           <div class="submit-area">
-            <div id="mensagem_erro"><?php echo $mensagem_erro; ?></div>
             <button type="submit" id="kayke">Enviar</button>
           </div>
         </form>

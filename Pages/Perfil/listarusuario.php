@@ -48,10 +48,10 @@ $usuarios = $userController->getAllUsers();
                         <td class="action-buttons">
 
                             <!-- Link para editar o usuário -->
-                            <a href="../../backend/router/userRouter.php?acao=update"<?php echo $usuario['id']; ?> class="button">Editar</a>
+                            <a href="../../Backend/Router/userRouter.php?acao=update"<?php echo $usuario['id']; ?> class="button">Editar</a>
 
                             <!-- Formulário para deletar o usuário -->
-                            <form action="../../backend/router/userRouter.php?acao=deletar" method="POST">
+                            <form action="../../Backend/Router/userRouter.php?acao=deletar" method="POST">
                                 <input type="hidden" name="idUsuario" value="<?php echo $usuario['id']; ?>">
                                 <button type="submit" name="deletar" class="button deletar-button">Deletar</button>
                             </form>

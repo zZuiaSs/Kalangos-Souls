@@ -103,17 +103,8 @@ input {
 
 .submit-area {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#mensagem_erro {
-    display: flex;
-    background-color: rgba(255, 0, 0, 0.75);
-    padding: 7px;
-    border-radius: 999px;
-    border: 2px solid red;
-    color: white;
+    justify-content: flex-end;
+    right: 0;
 }
 
 @media (max-width: 900px) {

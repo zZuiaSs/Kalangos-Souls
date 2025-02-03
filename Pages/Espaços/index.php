@@ -60,20 +60,3 @@
     </div>
 </body>
 </html>
-
-<!-- BREAKPOINT -->
- 
-    --- LISTA DE TAREFAS DO GARENA ---
-             | Visualizar Agenda
-    <Home>   | Cadastro de Espaços (Josefino)
-             | Lista de Espaços <feito>
-
-             |
-    <Feitos> | Cadastro de Usuários <Feito> 
-             | Login <Feito>
-    
-             | Listar usuários (Lukeee fazendo)
-    <Perfil> | Página de Reservas (Josefino faz dps)
-             |
-
-<!-- BREAKPOINT -->

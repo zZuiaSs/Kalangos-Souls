@@ -12,3 +12,10 @@ function escreverTexto() {
 }
 
 escreverTexto();
+
+// Fechar
+
+const fechar = document.getElementById('fechar');
+fechar.addEventListener('click', () => {
+  window.location.href = '../Pages/Login/index.php';
+});
