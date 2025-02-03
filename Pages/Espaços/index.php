@@ -35,7 +35,7 @@
             </thead>
             <tbody>
                 <?php
-                foreach ($espacos as $espacos) {
+                foreach ($espacos as $espaco) {
                 ?>
                     <tr>
                         <td><?php echo $espaco['nome']; ?></td>
@@ -43,10 +43,10 @@
 
                         <td class="action-buttons">
                             <!-- Link para editar o espaço -->
-                            <a href= "../../Backend/Router/spaceRouter.php?acao=update" <?php echo $espaco['id']; ?> class="button">Editar</a>
+                            <a href= "../../Backend/Router/spaceRouter.php?acao=update&id=<?php echo $espaco['id']; ?>" class="button">Editar</a>
 
                             <!-- Formulário para deletar o espaço -->
-                            <form action="../../backend/router/spaceRouter.php?acao=delete" method="POST">
+                            <form action="../../Backend/Router/spaceRouter.php?acao=delete" method="POST">
                                 <input type="hidden" name="idEspaco" value="<?php echo $espaco['id']; ?>">
                                 <button type="submit" name="deletar" class="button deletar-button">Deletar</button>
                             </form>

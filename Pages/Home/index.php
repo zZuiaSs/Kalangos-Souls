@@ -9,6 +9,9 @@
     header("Location: ../../Pages/Login/index.php");
     exit();
   }
+  if (!(isset($_POST['id_usuario']))){
+    header("../Pages/Login/index.php");
+  }
 
   $usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
 
@@ -27,16 +30,18 @@
 
 <body>
 
-  <!-- S C R I P T -->
-
   <div class="fundo-editar-perfil">
-    <div class="editar-perfil">
-      <input type="text">Nome
-      <button>Salvar</button>
-    </div>
-  </div>
+    <form class="editar-perfil" method="POST" action="../../Backend/Router/userRouter.php?acao=update">
+      <div class="Foto"></div>
 
-  <!-- C O N T E Ú D O -->
+      <input type="text" name="nome" placeholder="Nome">
+      <input type="text" name="email" placeholder="Email">
+      <input type="text" name="senha" placeholder="Senha">
+      <input type="text" name="telefone" placeholder="Telefone">
+
+      <button id="Salvar" name="salvar" type="submit">Salvar</button>
+    </form>
+  </div>
 
   <div class="container">
     <!-- M E N U -->
