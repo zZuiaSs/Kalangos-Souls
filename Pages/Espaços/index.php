@@ -72,8 +72,7 @@
     <Feitos> | Cadastro de Usuários <Feito> 
              | Login <Feito>
     
-             | Listar usuários (Lukeee fazendo
-             )
+             | Listar usuários (Lukeee fazendo)
     <Perfil> | Página de Reservas (Josefino faz dps)
              |
 
