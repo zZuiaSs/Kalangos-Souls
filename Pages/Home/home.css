@@ -266,10 +266,9 @@ body {
   padding: 10px;
 }
 
-/* .card-img {
-  width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+.card-img {
+  width: 150px;
+  height: 150px;
 }
 
 .card-title {
@@ -281,7 +280,7 @@ body {
 .card-subtitle {
   font-size: 14px;
   color: #cccccc;
-} */
+}
 
 .card-btn {
   background-color: #4caf50;

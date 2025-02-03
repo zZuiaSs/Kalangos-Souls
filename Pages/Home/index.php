@@ -29,12 +29,7 @@
 
   <!-- S C R I P T -->
 
-  <div class="fundo-editar-perfil">
-    <div class="editar-perfil">
-      <input type="text">Nome
-      <button>Salvar</button>
-    </div>
-  </div>
+  
 
   <!-- C O N T E Ú D O -->
 
@@ -92,31 +87,26 @@
 
         <main class="content">
 
-              
-          
           <div class="card">
             <img class="card-img" src="https://cdn0.casamentos.com.br/vendor/7952/3_2/960/jpg/16125676385173_13_307952-161290249528500.jpeg" alt="img do card">
             <h3 class="card-title">Espaço Canto Belo</h3>
              <p class="card-subtitle">Espaço de festas com piscina e churrasqueira</p>
             <p class = "capacidade">Capacidade: 50></p>
           </div>  
-
           <div class="card">
             <img class="card-img" src="https://cdn0.casamentos.com.br/vendor/7952/3_2/960/jpg/16125676385173_13_307952-161290249528500.jpeg" alt="img do card">
             <h3 class="card-title">Espaço Canto Belo</h3>
-             <p class="descricao">Espaço de festas com piscina e churrasqueira</p>
+             <p class="card-subtitle">Espaço de festas com piscina e churrasqueira</p>
             <p class = "capacidade">Capacidade: 50></p>
-          </div>    
-
+          </div>  
           <div class="card">
             <img class="card-img" src="https://cdn0.casamentos.com.br/vendor/7952/3_2/960/jpg/16125676385173_13_307952-161290249528500.jpeg" alt="img do card">
             <h3 class="card-title">Espaço Canto Belo</h3>
-             <p class="descricao">Espaço de festas com piscina e churrasqueira</p>
+             <p class="card-subtitle">Espaço de festas com piscina e churrasqueira</p>
             <p class = "capacidade">Capacidade: 50></p>
-          </div>     
-          
-              
-          
+          </div>  
+            
+
         </main>
       </div>
     </div>
