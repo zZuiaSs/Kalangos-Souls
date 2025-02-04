@@ -1,15 +1,3 @@
-<?php
-    if ($stmt->execute()) {
-        echo "Espaço cadastrado com sucesso! <a href='index.php'>Cadastrar outro</a>";
-    } else {
-        echo "Erro ao cadastrar espaço: " . $conn->error;
-    }
-
-    // Fechar conexão
-    $stmt->close();
-    $conn->close();
-
-?>
 
 
 <!DOCTYPE html>
