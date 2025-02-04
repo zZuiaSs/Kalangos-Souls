@@ -11,11 +11,16 @@
 
     <div class="posicao">
         <div class="fundo">
-            <h1 id="texto"></h1>
+            <div class="marca-texto">
+                <img id="chamado" src="https://cdn.pixabay.com/photo/2017/02/01/00/33/animal-2028598_960_720.png" alt="">
+                <h1 id="texto"></h1>
+            </div>
 
             <form method="POST" action="../../Backend/Router/loginRouter.php?acao=validarLogin">
-                <input type="text" name="nome" placeholder="Nome" autocomplete="off" required>
-                <input type="text" name="senha" placeholder="Senha" autocomplete="off" required>
+                <div class="forme">            
+                    <input type="text" name="nome" placeholder="Nome" autocomplete="off" required>
+                    <input type="text" name="senha" placeholder="Senha" autocomplete="off" required>
+                </div>
 
                 <div class="buttons">
                     <button type="button" id="criar-conta" onclick="window.location.href='../Cadastro/index.php'">Criar conta</button>
