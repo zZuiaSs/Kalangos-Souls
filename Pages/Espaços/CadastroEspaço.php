@@ -1,18 +1,4 @@
 <?php
-<<<<<<< Updated upstream
-
-    $nome = $_POST['nome'];
-    $tipo = $_POST['tipo'];
-    $capacidade = $_POST['capacidade'];
-    $descricao = $_POST['descricao'];
-
-    // Inserir os dados no banco de dados
-    $sql = "INSERT INTO espaco (nome,tipo, capacidade, descricao) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssii", $nome, $tipo, $capacidade, $descricao);
-=======
->>>>>>> Stashed changes
-
     if ($stmt->execute()) {
         echo "Espaço cadastrado com sucesso! <a href='index.php'>Cadastrar outro</a>";
     } else {
