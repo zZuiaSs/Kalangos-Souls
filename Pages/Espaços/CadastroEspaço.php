@@ -1,38 +1,25 @@
 <?php
-// Configurações do banco de dados
-$host = "localhost";
-$user = "root"; // Altere se necessário
-$password = ""; // Coloque a senha do seu MySQL
-$dbname = "reservas";
 
-// Conectar ao MySQL
-$conn = new mysqli($host, $user, $password, $dbname);
+    $nome = $_POST['nome'];
+    $tipo = $_POST['tipo'];
+    $capacidade = $_POST['capacidade'];
+    $descricao = $_POST['descricao'];
 
-// Verificar conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+    // Inserir os dados no banco de dados
+    $sql = "INSERT INTO espaco (nome,tipo, capacidade, descricao) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssii", $nome, $tipo, $capacidade, $descricao);
 
-// Capturar os dados do formulário
-$nome = $_POST['nome'];
-$tipo = $_POST['tipo'];
-$capacidade = $_POST['capacidade'];
-$descricao = $_POST['descricao'];
+    if ($stmt->execute()) {
+        echo "Espaço cadastrado com sucesso! <a href='index.php'>Cadastrar outro</a>";
+    } else {
+        echo "Erro ao cadastrar espaço: " . $conn->error;
+    }
 
-// Inserir os dados no banco de dados
-$sql = "INSERT INTO espaco (nome,tipo, capacidade, descricao) VALUES (?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ssii", $nome, $tipo, $capacidade, $descricao);
+    // Fechar conexão
+    $stmt->close();
+    $conn->close();
 
-if ($stmt->execute()) {
-    echo "Espaço cadastrado com sucesso! <a href='index.php'>Cadastrar outro</a>";
-} else {
-    echo "Erro ao cadastrar espaço: " . $conn->error;
-}
-
-// Fechar conexão
-$stmt->close();
-$conn->close();
 ?>
 
 
