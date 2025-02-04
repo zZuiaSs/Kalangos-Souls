@@ -26,9 +26,6 @@
 </head>
 
 <body>
-
-<<<<<<< Updated upstream
-=======
   <!-- S C R I P T -->
 
   <div class="fundo">
@@ -42,11 +39,10 @@
       <input name="senha" type="text" value="<?php  ?>">
       <input name="telefone" type="text" value="<?php  ?>">
 
-      <button ></button>
+      <button type="submit" name="salvar">Salvar</button>
     </form>
   </div>
 
->>>>>>> Stashed changes
   <!-- C O N T E Ú D O -->
 
   <div class="container">
@@ -81,24 +77,17 @@
           </div>
           Cadastrar espaço
         </button>
-<<<<<<< Updated upstream
-=======
         <button class="topbar-btn blue">
           <div style="display: flex; align-items:center; justify-content:center; background-color: #1A1A1A; padding: 10px; border-radius: 100%;">
             <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FFFFFF"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
           </div>
           Meus espaços
         </button>
->>>>>>> Stashed changes
         <button class="topbar-btn orange">
           <div style="display: flex; align-items:center; justify-content:center; background-color: #1A1A1A; padding: 10px; border-radius: 100%;">
             <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FFFFFF"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
           </div>
-<<<<<<< Updated upstream
-          Listar Usuários
-=======
-          Usuários
->>>>>>> Stashed changes
+          Listar usuários
         </button>
       </header>
 
@@ -125,16 +114,11 @@
             <img class="card-img" src="https://cdn0.casamentos.com.br/vendor/7952/3_2/960/jpg/16125676385173_13_307952-161290249528500.jpeg" alt="img do card">
             <h3 class="card-title">Espaço Canto Belo</h3>
              <p class="card-subtitle">Espaço de festas com piscina e churrasqueira</p>
-<<<<<<< Updated upstream
-            <p class = "card-subtitle">Capacidade: 50</p>
+              <p class = "card-subtitle">Capacidade: 50</p>
             <button id="reservar">Reservar</button>
           </div>  
-            
-
-=======
-            <p class = "capacidade">Capacidade: 50></p>
+            <p class="capacidade">Capacidade: 50></p>
           </div>
->>>>>>> Stashed changes
         </main>
       </div>
     </div>
