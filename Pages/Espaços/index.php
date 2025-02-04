@@ -24,35 +24,38 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Espaços</title>
+    <link rel="stylesheet" href="espaço.css">
 </head>
 <body>
-    <h2>Espaços Cadastrados</h2>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Tipo</th>
-            <th>Capacidade</th>
-            <th>Descrição</th>
-        </tr>
-        <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>
-                    <td>{$row['id']}</td>
-                    <td>{$row['nome']}</td>
-                    <td>{$row['tipo']}</td>
-                    <td>{$row['capacidade']}</td>
-                    <td>{$row['descricao']}</td>
-                </tr>";
+    <div class="fundo">
+        <h2>Espaços Cadastrados</h2>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Capacidade</th>
+                <th>Descrição</th>
+            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                        <td>{$row['id']}</td>
+                        <td>{$row['nome']}</td>
+                        <td>{$row['tipo']}</td>
+                        <td>{$row['capacidade']}</td>
+                        <td>{$row['descricao']}</td>
+                    </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>Nenhum espaço cadastrado</td></tr>";
             }
-        } else {
-            echo "<tr><td colspan='5'>Nenhum espaço cadastrado</td></tr>";
-        }
-        ?>
-    </table>
-    <br>
-    <a href="CadastroEspaço.php">Cadastrar novo espaço</a>
+            ?>
+        </table>
+        <br>
+        <a href="CadastroEspaço.php">Cadastrar novo espaço</a>
+    </div>
 </body>
 </html>
 

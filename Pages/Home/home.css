@@ -257,7 +257,7 @@ body {
 
 .card {
   max-width: 250px;
-  max-height: 275px;
+  max-height: 350px;
   background-color: #2a2a2a;
   border-radius: 8px;
   overflow: hidden;
@@ -267,8 +267,10 @@ body {
 }
 
 .card-img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 180px;
+  border-radius: 8px;
+  margin-top: 5px;
 }
 
 .card-title {
@@ -280,18 +282,28 @@ body {
 .card-subtitle {
   font-size: 14px;
   color: #cccccc;
+  text-align: start;
 }
 
-.card-btn {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
+
+#reservar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#reservar {
+  padding: 6px;
+  border: 1px solid green;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 10px;
-}
-
-.card-btn:hover {
-  background-color: #45a049;
+  transition: 0.3s ease;
+  width: 100%;
+  margin-top: 5px;
+} #reservar:hover {
+  background-color: green ;
+  color: white;
 }

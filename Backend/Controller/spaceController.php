@@ -12,7 +12,7 @@
 
         public function getAllSpaces() {
             try {
-                $sql = "SELECT * FROM espacos";
+                $sql = "SELECT * FROM espaco";
                 $db = $this->conn->prepare($sql);
                 $db->execute();
                 return $db->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@
         
         public function createSpaces($nome, $tipo, $capacidade, $descricao) {
             try {
-                $sql = "INSERT INTO espacos (nome, tipo, capacidade, descricao)
+                $sql = "INSERT INTO espaco (nome, tipo, capacidade, descricao)
                         VALUES (:nome, :tipo, :capacidade, :descricao)";
                 $db = $this->conn->prepare($sql);
                 $db->bindParam(":nome", $nome);
@@ -40,7 +40,7 @@
 
         public function deleteSpaces($id) {
             try {
-                $sql = "DELETE FROM espacos WHERE id = :id";
+                $sql = "DELETE FROM espaco WHERE id = :id";
                 $db = $this->conn->prepare($sql);
                 $db->bindParam(":id", $id);
                 return $db->execute();
@@ -52,7 +52,7 @@
 
         public function updateSpaces($id, $nome, $tipo, $capacidade, $descricao) {
             try {
-                $sql = "UPDATE espacos SET nome = :nome, tipo = :tipo, capacidade = :capacidade, descricao = :descricao WHERE id = :id";
+                $sql = "UPDATE espaco SET nome = :nome, tipo = :tipo, capacidade = :capacidade, descricao = :descricao WHERE id = :id";
                 $db = $this->conn->prepare($sql);
                 
                 $db->bindParam(":nome", $nome);
