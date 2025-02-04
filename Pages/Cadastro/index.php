@@ -63,7 +63,7 @@
           <input type="text" class="form-control" name="telefone" placeholder="Telefone" value="<?php echo $usuario['Telefone']; ?>" required autocomplete="off">
 
           <div class="submit-area">
-            <button type="submit" id="kayke">Enviar</button>
+            <button type="submit" id="kayke">Cadastrar</button>
           </div>
         </form>
       </div>

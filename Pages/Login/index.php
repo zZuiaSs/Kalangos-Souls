@@ -13,7 +13,10 @@
         <div class="fundo">
             <div class="marca-texto">
                 <img id="chamado" src="https://cdn.pixabay.com/photo/2017/02/01/00/33/animal-2028598_960_720.png" alt="">
-                <h1 id="texto"></h1>
+                <div>
+                    <h1 id="texto"></h1>
+                    <p style="opacity: 0.5;">Bem-vindo de volta...</p>
+                </div>
             </div>
 
             <form method="POST" action="../../Backend/Router/loginRouter.php?acao=validarLogin">
@@ -24,7 +27,7 @@
 
                 <div class="buttons">
                     <button type="button" id="criar-conta" onclick="window.location.href='../Cadastro/index.php'">Criar conta</button>
-                    <button type="submit" id="enviar">Enviar</button>
+                    <button type="submit" id="enviar">Entrar</button>
                 </div>
             </form>
         </div>
