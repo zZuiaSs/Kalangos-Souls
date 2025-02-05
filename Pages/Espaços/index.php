@@ -59,8 +59,8 @@ $result = $conn->query($sql);
                         <td>{$row['capacidade']}</td>
                         <td>{$row['descricao']}</td>
                         <td>
-                            <a href='EditarEspaço.php?id={$row['id']}'>Editar</a> |
-                            <a href='index.php?acao=excluir&id={$row['id']}' style='color: red;'>Excluir</a>
+                            <a href='EditarEspaço.php?id={$row['id_espaço']}'>Editar</a> |
+                            <a href='index.php?acao=excluir&id={$row['id_espaço']}' style='color: red;'>Excluir</a>
                         </td>
                     </tr>";
                 }
