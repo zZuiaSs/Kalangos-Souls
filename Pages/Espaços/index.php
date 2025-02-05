@@ -1,22 +1,34 @@
 <?php
-// Configurações do banco de dados
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "reservas";
 
-// Conectar ao MySQL
-$conn = new mysqli($host, $user, $password, $dbname);
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $dbname = "reservas";
 
-// Verificar conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+    // Conectar ao MySQL
+    $conn = new mysqli($host, $user, $password, $dbname);
 
-// Buscar os espaços cadastrados
-$sql = "SELECT * FROM espaco";
-$result = $conn->query($sql);
+    // Verificar conexão
+    if ($conn->connect_error) {
+        die("Erro na conexão: " . $conn->connect_error);
+    }
+
+    if (isset($_GET['acao']) && $_GET['acao'] == 'excluir' && isset($_GET['id_espaco'])) {
+        $id = $_GET['id_espaco'];
+        $sql = "DELETE FROM espaco WHERE id_espaco = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        header("Location: index.php");
+        exit();
+    }
+
+    $sql = "SELECT * FROM espaco";
+    $result = $conn->query($sql);
+
 ?>
+
+<!-- H T M L -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -36,20 +48,24 @@ $result = $conn->query($sql);
                 <th>Tipo</th>
                 <th>Capacidade</th>
                 <th>Descrição</th>
+                <th>Ações</th>
             </tr>
             <?php
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
-                        <td>{$row['id']}</td>
+                        <td>{$row['id_espaco']}</td>
                         <td>{$row['nome']}</td>
                         <td>{$row['tipo']}</td>
                         <td>{$row['capacidade']}</td>
                         <td>{$row['descricao']}</td>
+                        <td>
+                            <a href='index.php?acao=excluir&id_espaco={$row['id_espaco']}' style='color: red;'>Excluir</a>
+                        </td>
                     </tr>";
                 }
             } else {
-                echo "<tr><td colspan='5'>Nenhum espaço cadastrado</td></tr>";
+                echo "<tr><td colspan='6'>Nenhum espaço cadastrado</td></tr>";
             }
             ?>
         </table>
@@ -60,6 +76,6 @@ $result = $conn->query($sql);
 </html>
 
 <?php
-// Fechar conexão
-$conn->close();
+    // Fechar conexão
+    $conn->close();
 ?>

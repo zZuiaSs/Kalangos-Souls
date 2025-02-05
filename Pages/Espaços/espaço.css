@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto Slab", Arial;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,14 +13,21 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
+    color: white;
 }
 
 .fundo {
     display: flex;
     background-color: rgba(38, 44, 39, 0.89);
-    color: white;
     flex-direction: column;
-    width: 50rem;
+    width: 700px;
+    height: auto;
+    height: 500px;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 10px;
+} ::-webkit-scrollbar {
+    overflow: hidden;
 }
 
 h2 {
@@ -25,4 +36,30 @@ h2 {
     align-items: center;
     flex-direction: column;
     padding: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

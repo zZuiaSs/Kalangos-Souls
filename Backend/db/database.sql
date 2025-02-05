@@ -24,6 +24,7 @@ CREATE TABLE reservas (
 );
 
 select * from usuario;
+select * from espaco;
 
 insert into usuario (nome, senha, email, telefone)
 values ("Kaiko", "123456", "kaiko@email.com", "+5567940028922");

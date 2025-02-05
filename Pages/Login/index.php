@@ -22,7 +22,7 @@
             <form method="POST" action="../../Backend/Router/loginRouter.php?acao=validarLogin">
                 <div class="forme">            
                     <input type="text" name="nome" placeholder="Nome" autocomplete="off" required>
-                    <input type="text" name="senha" placeholder="Senha" autocomplete="off" required>
+                    <input type="password" name="senha" placeholder="Senha" autocomplete="off" required>
                 </div>
 
                 <div class="buttons">
