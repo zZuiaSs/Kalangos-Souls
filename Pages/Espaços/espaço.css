@@ -20,9 +20,14 @@ body {
     display: flex;
     background-color: rgba(38, 44, 39, 0.89);
     flex-direction: column;
-    width: 50rem;
+    width: 700px;
+    height: auto;
+    height: 500px;
+    overflow: auto;
     padding: 20px;
     border-radius: 10px;
+} ::-webkit-scrollbar {
+    overflow: hidden;
 }
 
 h2 {

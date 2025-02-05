@@ -59,7 +59,7 @@ $usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
         </div>
 
         <form class="logout-container" method="POST">
-          <button type="submit" name="logout" class="logout">Sair</button>
+          <button type="submit" name="logout" class="logout"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>Sair</button>
         </form>
       </div>
     </aside>
@@ -95,7 +95,6 @@ $usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
     </div>
   </div>
 
-  <!-- Modal Popup -->
   <div id="reservationModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>

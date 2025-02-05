@@ -1,5 +1,4 @@
 <?php
-
     $host = "localhost";
     $user = "root";
     $password = "";
@@ -72,6 +71,17 @@
         <br>
         <a href="CadastroEspaço.php">Cadastrar novo espaço</a>
     </div>
+
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reservar Espaço</h2>
+            <div id="calendar"></div>
+            <button id="confirmReservation">Confirmar Reserva</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
 

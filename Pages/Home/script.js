@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', function() {
       selectedSpaceId = this.getAttribute('data-id'); // Pegando o ID do espaço
       modal.style.display = 'flex';
-      loadCalendar(selectedSpaceId); // Carregar o calendário do espaço
+      loadMonthlyCalendar(selectedSpaceId); // Carregar o calendário mensal do espaço
     });
   });
 
@@ -49,14 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Função para carregar o calendário com datas disponíveis
-  function loadCalendar(spaceId) {
+  // Função para carregar o calendário mensal com datas disponíveis
+  function loadMonthlyCalendar(spaceId) {
     fetch(`../../Backend/Router/reservationRouter.php?acao=carregar&id_espaco=${spaceId}`)
       .then(response => response.json())
       .then(data => {
         const calendar = document.getElementById('calendar');
         calendar.innerHTML = ''; // Limpar o calendário antes de adicionar novos dias
 
+        // Adicionar cabeçalho do calendário
+        const header = document.createElement('div');
+        header.classList.add('calendar-header');
+        header.textContent = 'Calendário Mensal';
+        calendar.appendChild(header);
+
+        // Adicionar dias do mês
         data.dates.forEach(date => {
           const dayElement = document.createElement('div');
           dayElement.classList.add('calendar-day');
