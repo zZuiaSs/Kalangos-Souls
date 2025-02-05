@@ -18,18 +18,6 @@ body {
   color: #e0e0e0;
 }
 
-.editar-perfil {
-  width: 400px;
-  height: 500px;
-  padding: 25px;
-  border-radius: 25px;
-  background-color: rgb(29, 29, 29);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
 .fundo-editar-perfil {
   position: absolute;
   width: 100%;
@@ -40,13 +28,26 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.editar-perfil {
+  width: 400px;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: #1d1d1d;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
 .editar-perfil h2 {
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .editar-perfil label {
   align-self: flex-start;
   margin-bottom: 5px;
+  color: #cccccc;
 }
 
 .editar-perfil input {
@@ -63,11 +64,12 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: green;
+  background-color: #4caf50;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .editar-perfil button:hover {
-  background-color: darkgreen;
+  background-color: #45a049;
 }

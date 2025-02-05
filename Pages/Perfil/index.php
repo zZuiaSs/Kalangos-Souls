@@ -1,45 +1,49 @@
 <?php
-session_start();
 
-$usuario = htmlspecialchars($_SESSION['nome']);
-$id_usuario = $_SESSION['id_usuario'];
+    session_start();
 
-// Configurações do banco de dados
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "reservas";
+    require_once __DIR__ . "../../../Backend/db/database.php";
 
-// Conectar ao MySQL
-$conn = new mysqli($host, $user, $password, $dbname);
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $dbname = "reservas";
 
-// Verificar conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+    // Conectar ao MySQL
+    $conn = new mysqli($host, $user, $password, $dbname);
+    
+    // Verificar conexão
+    if ($conn->connect_error) {
+        die("Erro na conexão: " . $conn->connect_error);
+    }
+    
+    $usuario = $_SESSION['nome'];
+    
+    
+    // Atualizar perfil
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
 
-// Atualizar perfil
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
+        $sql = "UPDATE usuario SET nome = ?, email = ? WHERE id_usuario = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssi", $nome, $email, $id_usuario);
+        $stmt->execute();
 
-    $sql = "UPDATE usuario SET nome = ?, email = ? WHERE id_usuario = ?";
+        $_SESSION['nome'] = $nome;
+        header("Location: index.php");
+        exit();
+    }
+
+
+    // Buscar dados do usuário
+    $sql = "SELECT * FROM usuario WHERE id_usuario = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $nome, $email, $id_usuario);
+    $stmt->bind_param("i", $id_usuario);
     $stmt->execute();
+    $result = $stmt->get_result();
+    $usuario = $result->fetch_assoc();
 
-    $_SESSION['nome'] = $nome;
-    header("Location: index.php");
-    exit();
-}
-
-// Buscar dados do usuário
-$sql = "SELECT * FROM usuario WHERE id_usuario = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id_usuario);
-$stmt->execute();
-$result = $stmt->get_result();
-$usuario = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
