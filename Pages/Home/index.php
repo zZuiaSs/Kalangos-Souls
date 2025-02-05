@@ -75,30 +75,27 @@
 
         <main class="content">
 
-        <?php
-    // // Consulta SQL para selecionar dados de 'espaco'
-    // $sql = "SELECT id, nome, capacidade, descricao FROM espaco";
-
-    // // Executa a consulta no banco de dados
-    // $result = $conn->query($sql);
-
-    // // Verifica se há resultados
-    // if ($result->num_rows > 0) {
-    //     // Inicia a exibição dos cards
-    //     while ($row = $result->fetch_assoc()) {
-    //         ?>
-    //         <div class="card">
-    //             <h2><?php echo htmlspecialchars($row['nome']); ?></h2>
-    //             <p><strong>Capacidade:</strong> <?php echo htmlspecialchars($row['capacidade']); ?></p>
-    //             <p><strong>Descrição:</strong> <?php echo htmlspecialchars($row['descricao']); ?></p>
-    //         </div>
-    //         <?php
-    //     }
-    // } else {
-    //     echo "<p>Nenhum espaço encontrado.</p>";
-    // }
-?>
-
+          <div class="card">
+            <img class="card-img" src="https://cdn0.casamentos.com.br/vendor/7952/3_2/960/jpg/16125676385173_13_307952-161290249528500.jpeg" alt="img do card">
+            <h3 class="card-title">Espaço Canto Belo</h3>
+             <p class="card-subtitle">Espaço de festas com piscina e churrasqueira</p>
+            <p class = "card-subtitle">Capacidade: 50</p>
+            <button id="reservar">Reservar</button>
+          </div>  
+          <div class="card">
+            <img class="card-img" src="https://cdn0.casamentos.com.br/vendor/7952/3_2/960/jpg/16125676385173_13_307952-161290249528500.jpeg" alt="img do card">
+            <h3 class="card-title">Espaço Canto Belo</h3>
+             <p class="card-subtitle">Espaço de festas com piscina e churrasqueira</p>
+            <p class = "card-subtitle">Capacidade: 50</p>
+            <button id="reservar">Reservar</button>
+          </div>  
+          <div class="card">
+            <img class="card-img" src="https://cdn0.casamentos.com.br/vendor/7952/3_2/960/jpg/16125676385173_13_307952-161290249528500.jpeg" alt="img do card">
+            <h3 class="card-title">Espaço Canto Belo</h3>
+             <p class="card-subtitle">Espaço de festas com piscina e churrasqueira</p>
+            <p class = "card-subtitle">Capacidade: 50</p>
+            <button id="reservar">Reservar</button>
+          </div>  
             
 
         </main>

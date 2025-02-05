@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $tipo = $_POST["tipo"]; 
             $capacidade = $_POST["capacidade"];
             $descricao = $_POST["descricao"];
+            $descricao = $_POST["descricao"];
             
             $resposta = $spaceController->updateSpaces($id, $nome, $tipo, $capacidade, $descricao);
         
