@@ -29,6 +29,11 @@ if (isset($_POST['logout'])) {
 }
 
 $usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
+
+if (isset($_POST['editar-perfil'])) {
+  header("Location: ../../Pages/Perfil/index.php");
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -52,10 +57,9 @@ $usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
             <h1 class="profile-name"><?php echo $usuario; ?></h1>
           </div>
 
-          <div class="menu">
-            <button class="menu-item" onclick="window.location.href='../Reservas/index.php'">Minhas reservas</button>
-            <button class="menu-item" onclick="window.location.href='../Perfil/index.php'">Editar perfil</button>
-          </div>
+          <form class="menu" method="POST">
+            <button class="menu-item" name="editar-perfil">Editar perfil</button>
+          </form>
         </div>
 
         <form class="logout-container" method="POST">
