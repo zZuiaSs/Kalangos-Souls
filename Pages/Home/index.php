@@ -1,40 +1,44 @@
 <?php
-session_start();
-require_once __DIR__ . "../../../Backend/Controller/loginController.php";
 
-// Configurações do banco de dados
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "reservas";
+  session_start();
+  require_once __DIR__ . "../../../Backend/Controller/loginController.php";
 
-// Conectar ao MySQL
-$conn = new mysqli($host, $user, $password, $dbname);
+  // Configurações do banco de dados
+  $host = "localhost";
+  $user = "root";
+  $password = "";
+  $dbname = "reservas";
 
-// Verificar conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+  // Conectar ao MySQL
+  $conn = new mysqli($host, $user, $password, $dbname);
 
-// Buscar os espaços cadastrados
-$sql = "SELECT * FROM espaco";
-$result = $conn->query($sql);
+  // Verificar conexão
+  if ($conn->connect_error) {
+      die("Erro na conexão: " . $conn->connect_error);
+  }
 
-// Verificar se o usuário está logado
-if (isset($_POST['logout'])) {
-  $loginController = new loginController();
-  $loginController->logout();
-  header("Location: ../../Pages/Login/index.php");
-  exit();
-}
+  // Buscar os espaços cadastrados
+  $sql = "SELECT * FROM espaco";
+  $result = $conn->query($sql);
 
-$usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
+  // Verificar se o usuário está logado
+  if (isset($_POST['logout'])) {
+    $loginController = new loginController();
+    $loginController->logout();
+    header("Location: ../../Pages/Login/index.php");
+    exit();
+  }
 
-if (isset($_POST['editar-perfil'])) {
-  header("Location: ../../Pages/Perfil/index.php");
-  exit();
-}
+  $usuario = htmlspecialchars($_SESSION['nome'] ?? 'Usuário');
+
+  if (isset($_POST['editar-perfil'])) {
+    header("Location: ../../Pages/Perfil/index.php");
+    exit();
+  }
+
 ?>
+
+<!--  -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -105,65 +109,65 @@ if (isset($_POST['editar-perfil'])) {
       <h2>Reservar Espaço</h2>
       <div id="calendar"></div>
       <?php
-// Definir o mês e o ano
-$mes = 2;  // Fevereiro
-$ano = 2025;
+      // Definir o mês e o ano
+      $mes = 2;  // Fevereiro
+      $ano = 2025;
 
-// Definir os dias reservados
-$reservados = [
-    '01', '02', '05', '08', '11', '12', '14', '15', '18', '19', '22', '23', '25', '26', '29'
-];
+      // Definir os dias reservados
+      $reservados = [
+          '01', '02', '05', '08', '11', '12', '14', '15', '18', '19', '22', '23', '25', '26', '29'
+      ];
 
-// Função para verificar se o dia está reservado
-function isReservado($dia, $reservados) {
-    return in_array(str_pad($dia, 2, '0', STR_PAD_LEFT), $reservados);
-}
+      // Função para verificar se o dia está reservado
+      function isReservado($dia, $reservados) {
+          return in_array(str_pad($dia, 2, '0', STR_PAD_LEFT), $reservados);
+      }
 
-// Nome dos dias da semana
-$diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+      // Nome dos dias da semana
+      $diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
 
-// Obter o número de dias do mês e o dia da semana inicial
-$numDias = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
-$diaInicio = date("w", strtotime("$ano-$mes-01"));
+      // Obter o número de dias do mês e o dia da semana inicial
+      $numDias = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
+      $diaInicio = date("w", strtotime("$ano-$mes-01"));
 
-// Gerar a agenda
-echo "<table border='1' style='border-collapse: collapse;'>";
-echo "<tr><th colspan='7' style='text-align: center;'>Agenda de $mes/$ano</th></tr>";
-echo "<tr>";
-foreach ($diasSemana as $dia) {
-    echo "<th>$dia</th>";
-}
-echo "</tr><tr>";
+      // Gerar a agenda
+      echo "<table border='1' style='border-collapse: collapse;'>";
+      echo "<tr><th colspan='7' style='text-align: center;'>Agenda de $mes/$ano</th></tr>";
+      echo "<tr>";
+      foreach ($diasSemana as $dia) {
+          echo "<th>$dia</th>";
+      }
+      echo "</tr><tr>";
 
-// Preencher os dias antes do primeiro dia do mês
-for ($i = 0; $i < $diaInicio; $i++) {
-    echo "<td></td>";
-}
+      // Preencher os dias antes do primeiro dia do mês
+      for ($i = 0; $i < $diaInicio; $i++) {
+          echo "<td></td>";
+      }
 
-// Preencher os dias do mês
-for ($dia = 1; $dia <= $numDias; $dia++) {
-    // Verificar se o dia está reservado
-    $status = isReservado($dia, $reservados) ? "Reservado" : "Disponível";
-    $cor = $status == "Reservado" ? "red" : "green";
-    
-    echo "<td style='text-align: center; background-color: $cor;'>";
-    echo "$dia<br>$status";
-    echo "</td>";
+      // Preencher os dias do mês
+      for ($dia = 1; $dia <= $numDias; $dia++) {
+        // Verificar se o dia está reservado
+        $status = isReservado($dia, $reservados) ? "Reservado" : "Disponível";
+        $cor = $status == "Reservado" ? "red" : "green";
+        
+        echo "<td style='text-align: center; background-color: $cor;'>";
+        echo "$dia<br>$status";
+        echo "</td>";
 
-    // Se for sábado (último dia da semana), quebra de linha
-    if (($dia + $diaInicio) % 7 == 0) {
-        echo "</tr><tr>";
-    }
-}
+        // Se for sábado (último dia da semana), quebra de linha
+        if (($dia + $diaInicio) % 7 == 0) {
+            echo "</tr><tr>";
+        }
+      }
 
-// Preencher as células vazias após o último dia
-for ($i = ($diaInicio + $numDias) % 7; $i < 7 && $i > 0; $i++) {
-    echo "<td></td>";
-}
+      // Preencher as células vazias após o último dia
+      for ($i = ($diaInicio + $numDias) % 7; $i < 7 && $i > 0; $i++) {
+          echo "<td></td>";
+      }
 
-echo "</tr>";
-echo "</table>";
-?>
+      echo "</tr>";
+      echo "</table>";
+      ?>
 
       <button id="confirmReservation">Confirmar Reserva</button>
     </div>
@@ -173,7 +177,7 @@ echo "</table>";
 </body>
 </html>
 
-<?php
-// Fechar conexão
-$conn->close();
-?>
+    <?php
+    // Fechar conexão
+    $conn->close();
+    ?>

@@ -25,16 +25,18 @@
                 break;
             
             case "update":
+                $id_usuario = $_POST["idUsuario"];
                 $nome = $_POST["nome"];
                 $senha = $_POST["senha"];
                 $email = $_POST["email"];
                 $telefone = $_POST["telefone"];
 
                 if (!(empty($nome) || empty($senha))) {
-                    $resposta = $userController->UpdateUser($_POST["idUsuario"], $nome, $senha, $email, $telefone);
+                    $resposta = $userController->updateUser($idUsuario, $nome, $senha, $email, $telefone);
 
                     if ($resposta) {
-                        header("Location: ../../Pages/Home/index.php");
+                        header("Location: ../../Pages/Perfil/index.php");
+                        exit;
                     }
                 }
                 break;

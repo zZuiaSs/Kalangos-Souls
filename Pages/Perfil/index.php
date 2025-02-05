@@ -1,44 +1,46 @@
-    <!-- session_start();
+<?php
+session_start(); // Iniciar a sessão
 
-    require_once __DIR__ . "../../../Backend/db/database.php";
+$id_usuario = $_SESSION['id'] ?? $_GET['id'];
 
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $dbname = "reservas";
+// Configurações do banco de dados
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "reservas";
 
-    $conn = new mysqli($host, $user, $password, $dbname);
-    
-    if ($conn->connect_error) {
-        die("Erro na conexão: " . $conn->connect_error);
-    }
-    
-    $usuario = $_SESSION['nome'];
-    
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
+// Conectar ao MySQL
+$conn = new mysqli($host, $user, $password, $dbname);
 
-        $sql = "UPDATE usuario SET nome = ?, email = ? WHERE id_usuario = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssi", $nome, $email, $id_usuario);
-        $stmt->execute();
+// Verificar conexão
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
+}
 
-        $_SESSION['nome'] = $nome;
-        header("Location: index.php");
-        exit();
-    }
+// Atualizar perfil
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $telefone = $_POST['telefone'];
 
-    $sql = "SELECT * FROM usuario WHERE id_usuario = ?";
+    $sql = "UPDATE usuario SET nome = ?, email = ?, senha = ?, telefone = ? WHERE id_usuario = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id_usuario);
+    $stmt->bind_param("ssssi", $nome, $email, $senha, $telefone, $id_usuario);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $usuario = $result->fetch_assoc();
 
-?> -->
+    $_SESSION['nome'] = $nome;
+    exit();
+}
 
-<!-- H T M L -->
+// Buscar dados do usuário
+$sql = "SELECT * FROM usuario WHERE id_usuario = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id_usuario);
+$stmt->execute();
+$result = $stmt->get_result();
+$usuario = $result->fetch_assoc();
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -46,19 +48,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
-    <link rel="stylesheet" href="../Home/home.css">
+    <link rel="stylesheet" href="./perfil.css">
 </head>
 <body>
     <div class="fundo-editar-perfil">
         <div class="editar-perfil">
             <h2>Editar Perfil</h2>
-            <form method="POST">
+            <form method="POST" action="../../Backend/Router/userRouter.php?acao=update">
+                <input type="hidden" name="idUsuario" value="<?php echo htmlspecialchars($usuario['id_usuario'] ?? ''); ?>">
                 <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($usuario['nome'] ?? ''); ?>" placeholder="Nome" required>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($usuario['email'] ?? ''); ?>" placeholder="Email" required>
-                <input type="text" id="senha" name="senha" value="<?php echo htmlspecialchars($usuario['senha'] ?? ''); ?>" placeholder="Senha" required>
+                <input type="password" id="senha" name="senha" value="<?php echo htmlspecialchars($usuario['senha'] ?? ''); ?>" placeholder="Senha" required>
                 <input type="text" id="telefone" name="telefone" value="<?php echo htmlspecialchars($usuario['telefone'] ?? ''); ?>" placeholder="Telefone" required>
-
-                <button type="submit">Salvar</button>
+                <button class="form-control" type="submit">Salvar</button>
             </form>
         </div>
     </div>
