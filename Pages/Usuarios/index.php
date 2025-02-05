@@ -55,7 +55,7 @@ $result = $conn->query($sql);
                         <td>{$row['nome']}</td>
                         <td>{$row['email']}</td>
                         <td>
-                            <a href='index.php?acao=excluir&id_usuario={$row['id_usuario']}' style='color: red;'>Excluir</a>
+                            <a href='index.php?acao=excluir&id_usuario={$row['id_usuario']}'><button class=btm>Excluir</button></a>
                         </td>
                     </tr>";
                 }
@@ -65,12 +65,12 @@ $result = $conn->query($sql);
             ?>
         </table>
         <br>
-        <a href="../Cadastro/index.php"><button>Cadastrar novo usuário</button></a>
+        <a href="../Cadastro/index.php"><button class="bta">Cadastrar novo usuário</button></a>
     </div>
 </body>
 </html>
 
 <?php
-// Fechar conexão
-$conn->close();
+    // Fechar conexão
+    $conn->close();
 ?>
