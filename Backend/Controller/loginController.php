@@ -24,7 +24,9 @@
                 if ($usuario) {
                     session_start();
                     $_SESSION["nome"] = $usuario["nome"];
+                    $_SESSION["email"] = $usuario["email"];
                     $_SESSION["senha"] = $usuario["senha"];
+                    $_SESSION["telefone"] = $usuario["telefone"];
                     return true;
 
                 } else {

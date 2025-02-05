@@ -8,6 +8,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     switch ($_GET["acao"]) {
 
+        case 'cadastrar':
+            $nome = $_POST["nome"];
+            $tipo = $_POST["tipo"];
+            $capacidade = $_POST["capacidade"];
+            $descricao = $_POST["descricao"];
+            
+            $resposta = $spaceController->createSpaces($nome, $tipo, $capacidade, $descricao);
+        
+            if ($resposta) {
+                header("Location: ../../Pages/Espaços/index.php");
+                exit;
+            } else {
+                echo "Erro ao cadastrar o espaço...";
+                exit;
+            }
+            break;
+
         case 'update':
             $id = $_POST["id"];
             $nome = $_POST["nome"];
