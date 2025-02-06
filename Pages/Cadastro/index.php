@@ -50,7 +50,7 @@
         </div>
 
         <div>
-          <img id="chamado" src="../../C ----------------------/imagem.png" alt="">
+          <img id="chamado" src="../../C ----------------------/twitter.png" alt="">
           <p>cadastre-se na alugossauro e<br>faça coisas incríveis...</p>
         </div>
       </div>

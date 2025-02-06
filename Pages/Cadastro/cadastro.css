@@ -45,8 +45,9 @@ body {
 }
 
 #chamado {
-    width: 220px;
-    height: 146px;
+    width: 150px;
+    height: 150px;
+    margin-left: 70px;
 }
 
 /* C L A S S E S */
