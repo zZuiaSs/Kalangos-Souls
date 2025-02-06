@@ -10,8 +10,10 @@
 
 #texto {
     font-size: 30px;
+    color: white;
 } p {
     opacity: 0.5;
+    color: white;
 }
 
 .fechar-texto {
@@ -28,10 +30,10 @@
     height: 40px;
     padding: 7px;
     border-radius: 100%;
-    background-color: rgb(230, 230, 230);
+    background-color: #000000;
     border: none;
 } #fechar:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: #000000;
     cursor: pointer;
 }
 
@@ -39,6 +41,7 @@ body {
     width: 100vw;
     height: 100vh; 
     display: flex;
+    background-color: #000000;
 }
 
 #chamado {
@@ -80,7 +83,7 @@ body {
 .fundo {
     display: flex;
     justify-content: center;
-    background-color: rgb(230, 230, 230);
+    background-color: #242222;
     height: 400px;
     width: 700px;
     min-width: 500px;
