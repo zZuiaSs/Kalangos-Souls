@@ -43,14 +43,14 @@
         <div class="fechar-texto">
           <form method="POST" style="width: 15%;">
             <button id="fechar" name="fechar" type="submit">
-              <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#FFFFFF"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
             </button>
           </form>
           <h1 id="texto"></h1>
         </div>
 
         <div>
-          <img id="chamado" src="https://cdn.pixabay.com/photo/2017/02/01/00/33/animal-2028598_960_720.png" alt="">
+          <img id="chamado" src="../../C ----------------------/imagem.png" alt="">
           <p>cadastre-se na alugossauro e<br>faça coisas incríveis...</p>
         </div>
       </div>
